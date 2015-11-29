@@ -16,6 +16,7 @@ categories: 第一篇博客.瞎扯
 
 好吧，不瞎扯了，我要开始写博客了，嘻嘻。
 {% highlight c %}
+
 	#include <stdio.h>
 
 	int main( int argc, char *argv)
