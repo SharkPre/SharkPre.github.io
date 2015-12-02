@@ -1,0 +1,15 @@
+---
+layout: post
+title: "redis学习笔记"
+date: 2015-12-02 19:24:30 +0800
+categories: jekyll update
+---
+
+今日偶尔看到一篇好文章，有幸能够学习之。
+15天玩转redis系列
+http://www.cnblogs.com/huangxincheng/p/5010795.html
+redis参考手册 http://doc.redisfans.com/key/del.html
+
+
+八天学通mongoDB 
+http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html
