@@ -15,5 +15,7 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  SharkPre
 
+paginate: 10
+
 # Build settings
 markdown: kramdown
