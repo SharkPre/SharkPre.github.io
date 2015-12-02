@@ -1,6 +1,6 @@
 ---
 layout: post
-title:	git常用命令
+title:	"git常用命令"
 date: 	2015-12-02 20:30:00 +0800
 categroies: jekyll update
 ---
