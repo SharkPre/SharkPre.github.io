@@ -6,3 +6,20 @@ categories: jekyll update
 ---
 
     跳跃表(SkipList)是1987年才搞出来的新型高效数据结构，它的牛逼之处在于跳出来了树模型的思维，用多层链表的模式构造了Log(N)的时间复杂度，层的高度增加与否，采用随机数的模式。
+
+/*ZSET use a specialized version of Skiplists*/
+typedef struct zskiplistNode {
+    robj *obj;
+    double score;
+    struct zskiplistNode *backward;
+    struct zskiplistLevel {
+    	struct zskiplistNode *forward;
+	unsigned int span;
+    }level[];
+} zskiplistNode;
+
+typedef struct zskiplist {
+    struct zskiplistNode *header, *tail;
+    unsigned long length;
+    int level;
+} zskiplist;
