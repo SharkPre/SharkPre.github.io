@@ -1,0 +1,26 @@
+---
+layout: post
+title:	git常用命令
+date: 	2015-12-02 20:30:00 +0800
+categroies: jekyll update
+---
+
++ git push/pull 推送/下拉 
+
++ git status
+   查看当前git仓库状态
+	
++ git commit -m "XXXX"
+   提交至本地仓库
+
++ git branch
+   查看分支 前面带*号的是当前分支
+
++ git checkout ×××
+  切换分支
+
++ git mv ** **
+  重命名文件
+
++ git help 帮助命令
+
