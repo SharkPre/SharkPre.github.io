@@ -2,13 +2,253 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>我不是坏人</title>
-    <description>读书笔记，加强自己的理解。
+    <description>读书笔记，加强自己的理解，也希望能和大家一起交流学习。
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Nov 2015 13:17:49 +0800</pubDate>
-    <lastBuildDate>Sun, 29 Nov 2015 13:17:49 +0800</lastBuildDate>
+    <pubDate>Thu, 03 Dec 2015 00:27:26 +0800</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2015 00:27:26 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>markdown语法</title>
+        <description>&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;标题&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;总共有六种标题，＃号需要在一行的最前面，一级标题一个＃号，二级标题两个＃号，…&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;一级标题&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;二级标题&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;换行&lt;/strong&gt;  &lt;br /&gt;
+可以使用html里面的”&amp;lt;br&amp;gt;”&lt;br /&gt;
+也可以在每一行最后面空出至少两个空格后在换行&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;列表&lt;/strong&gt;&lt;br /&gt;
+使用－、＊、＋ 即可变为无序列表&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;aaa&lt;/li&gt;
+  &lt;li&gt;bbb&lt;/li&gt;
+  &lt;li&gt;ccc&lt;/li&gt;
+  &lt;li&gt;ddd
+    &lt;ul&gt;
+      &lt;li&gt;aaa&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有序列表使用 ** 1. 2. 3. **&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	1. a
+	2. b
+	3. c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;引用&lt;/strong&gt;
+需要在文本前加上 &amp;gt; (尖括号、大于号)即可&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这是引用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;图片与链接&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;图片为： &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;{ImgCap}{/ImgCap}&lt;br /&gt;
+链接为:  []()&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;直接引用为: &amp;lt;&amp;gt;(一对尖括号)貌似不起作用了
+www.google.com.hk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;em&gt;粗体与斜体&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;两个*号包含一段文本就是粗体，一个*包含就是斜体&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;表格&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|Tables   | A   |B     |
+| --------|:---:|:----:|
+|1        | 1A  |1B    |
+|2        | 2A  | 2B   |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;生成以下的表格:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tables&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;A&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;B&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2B&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;代码框&lt;/strong&gt;&lt;br /&gt;
+程序猿需要代码框,将代码用两个`（esc键）包起来(貌似有点问题)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`#include &amp;lt;stdio.h&amp;gt;  int main(int argc, char **argv) {  
+	printf(&quot;fuck the wrold!\n&quot;);  
+	return 0;  }`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;分割线&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;三个 * 或者三个 －&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;代码高亮&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;	&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;	
+	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;	
+	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;参考资料&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/1e402922ee32/&quot;&gt;http://www.jianshu.com/p/1e402922ee32/&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:10:00 +0800</pubDate>
+        <link>http://yourdomain.com/markdown%E8%AF%AD%E6%B3%95/2015/12/03/markdown%E8%AF%AD%E6%B3%95.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/markdown%E8%AF%AD%E6%B3%95/2015/12/03/markdown%E8%AF%AD%E6%B3%95.html</guid>
+        
+        
+        <category>markdown语法</category>
+        
+      </item>
+    
+      <item>
+        <title>git常用命令</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git push/pull 推送/下拉&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git status
+ 查看当前git仓库状态&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git commit -m “XXXX”
+ 提交至本地仓库&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git branch
+ 查看分支 前面带*号的是当前分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git checkout ×××
+切换分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git mv ** **
+重命名文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git help 帮助命令&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 02 Dec 2015 20:30:00 +0800</pubDate>
+        <link>http://yourdomain.com/2015/12/02/git%E6%8A%80%E5%B7%A7.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/12/02/git%E6%8A%80%E5%B7%A7.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>redis跳表学习</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;跳跃表(SkipList)是1987年才搞出来的新型高效数据结构，它的牛逼之处在于跳出来了树模型的思维，用多层链表的模式构造了Log(N)的时间复杂度，层的高度增加与否，采用随机数的模式。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;	
+	&lt;span class=&quot;c1&quot;&gt;// ZSET use a specialized version of Skiplists
+&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// 以下是redis源码中跳表的定义
+&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplistNode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;robj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    	&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplistNode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplistLevel&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    		&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplistNode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplistNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplist&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    	&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplistNode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    	&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zskiplist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Wed, 02 Dec 2015 19:58:00 +0800</pubDate>
+        <link>http://yourdomain.com/jekyll/update/2015/12/02/redis%E8%B7%B3%E8%A1%A8%E5%AD%A6%E4%B9%A0.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/12/02/redis%E8%B7%B3%E8%A1%A8%E5%AD%A6%E4%B9%A0.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>redis学习笔记</title>
+        <description>&lt;p&gt;今日偶尔看到一篇好文章，有幸能够学习之。
+15天玩转redis系列
+&lt;a href=&quot;http://www.cnblogs.com/huangxincheng/p/5010795.html&quot;&gt;http://www.cnblogs.com/huangxincheng/p/5010795.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://doc.redisfans.com/key/del.html&quot;&gt;redis参考手册&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html&quot;&gt;八天学通mongoDB&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Dec 2015 19:24:30 +0800</pubDate>
+        <link>http://yourdomain.com/jekyll/update/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>My first blog</title>
@@ -29,6 +269,7 @@
 		&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
         <pubDate>Sat, 21 Nov 2015 00:12:34 +0800</pubDate>
         <link>http://yourdomain.com/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.%E7%9E%8E%E6%89%AF/2015/11/21/my-first-blog.html</link>

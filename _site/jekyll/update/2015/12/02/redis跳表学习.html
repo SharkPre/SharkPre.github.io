@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>My first blog</title>
-  <meta name="description" content="最近一段时间，趁着上下班坐地铁的时间把明朝那些事看了一遍，看的很是入迷，看完之后把我自己都吓一跳，不知不觉已经看了两千多页了。">
+  <title>redis跳表学习</title>
+  <meta name="description" content="  跳跃表(SkipList)是1987年才搞出来的新型高效数据结构，它的牛逼之处在于跳出来了树模型的思维，用多层链表的模式构造了Log(N)的时间复杂度，层的高度增加与否，采用随机数的模式。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.%E7%9E%8E%E6%89%AF/2015/11/21/my-first-blog.html">
+  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/12/02/redis%E8%B7%B3%E8%A1%A8%E5%AD%A6%E4%B9%A0.html">
   <link rel="alternate" type="application/rss+xml" title="我不是坏人" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,28 +57,33 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">My first blog</h1>
-    <p class="post-meta"><time datetime="2015-11-21T00:12:34+08:00" itemprop="datePublished">Nov 21, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">redis跳表学习</h1>
+    <p class="post-meta"><time datetime="2015-12-02T19:58:00+08:00" itemprop="datePublished">Dec 2, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>最近一段时间，趁着上下班坐地铁的时间把明朝那些事看了一遍，看的很是入迷，看完之后把我自己都吓一跳，不知不觉已经看了两千多页了。</p>
+    <blockquote>
+  <p>跳跃表(SkipList)是1987年才搞出来的新型高效数据结构，它的牛逼之处在于跳出来了树模型的思维，用多层链表的模式构造了Log(N)的时间复杂度，层的高度增加与否，采用随机数的模式。</p>
+</blockquote>
 
-<p>看完之后，感触颇深，中国历史上从来不缺人才，估计是历史造就了那些人吧。</p>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++">	
+	<span class="c1">// ZSET use a specialized version of Skiplists
+</span>	<span class="c1">// 以下是redis源码中跳表的定义
+</span>	<span class="k">typedef</span> <span class="k">struct</span> <span class="n">zskiplistNode</span> <span class="p">{</span>
+    	<span class="n">robj</span> <span class="o">*</span><span class="n">obj</span><span class="p">;</span>
+    	<span class="kt">double</span> <span class="n">score</span><span class="p">;</span>
+    	<span class="k">struct</span> <span class="n">zskiplistNode</span> <span class="o">*</span><span class="n">backward</span><span class="p">;</span>
+    	<span class="k">struct</span> <span class="n">zskiplistLevel</span> <span class="p">{</span>
+    		<span class="k">struct</span> <span class="n">zskiplistNode</span> <span class="o">*</span><span class="n">forward</span><span class="p">;</span>
+			<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">span</span><span class="p">;</span>
+    	<span class="p">}</span><span class="n">level</span><span class="p">[];</span>
+	<span class="p">}</span> <span class="n">zskiplistNode</span><span class="p">;</span>
 
-<p>最近总感觉该做点什么事，自己光闷头看书也不是个事，恰好看到了别人的github博客，于是我也就来凑凑热闹，准备来自己建一个博客。</p>
-
-<p>还是免费的，最适合我这样的 DS monkey 了。</p>
-
-<p>好吧，不瞎扯了，我要开始写博客了，嘻嘻。</p>
-
-<figure class="highlight"><pre><code class="language-c" data-lang="c">	<span class="cp">#include &lt;stdio.h&gt;
-</span>
-	<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="p">}</span></code></pre></figure>
+	<span class="k">typedef</span> <span class="k">struct</span> <span class="n">zskiplist</span> <span class="p">{</span>
+    	<span class="k">struct</span> <span class="n">zskiplistNode</span> <span class="o">*</span><span class="n">header</span><span class="p">,</span> <span class="o">*</span><span class="n">tail</span><span class="p">;</span>
+    	<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">length</span><span class="p">;</span>
+    	<span class="kt">int</span> <span class="n">level</span><span class="p">;</span>
+	<span class="p">}</span> <span class="n">zskiplist</span><span class="p">;</span></code></pre></figure>
 
 
   </div>

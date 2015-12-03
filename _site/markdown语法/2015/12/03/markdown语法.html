@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>My first blog</title>
-  <meta name="description" content="最近一段时间，趁着上下班坐地铁的时间把明朝那些事看了一遍，看的很是入迷，看完之后把我自己都吓一跳，不知不觉已经看了两千多页了。">
+  <title>markdown语法</title>
+  <meta name="description" content="标题">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2.%E7%9E%8E%E6%89%AF/2015/11/21/my-first-blog.html">
+  <link rel="canonical" href="http://yourdomain.com/markdown%E8%AF%AD%E6%B3%95/2015/12/03/markdown%E8%AF%AD%E6%B3%95.html">
   <link rel="alternate" type="application/rss+xml" title="我不是坏人" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,28 +57,141 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">My first blog</h1>
-    <p class="post-meta"><time datetime="2015-11-21T00:12:34+08:00" itemprop="datePublished">Nov 21, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">markdown语法</h1>
+    <p class="post-meta"><time datetime="2015-12-03T00:10:00+08:00" itemprop="datePublished">Dec 3, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>最近一段时间，趁着上下班坐地铁的时间把明朝那些事看了一遍，看的很是入迷，看完之后把我自己都吓一跳，不知不觉已经看了两千多页了。</p>
+    <hr />
+<p><strong>标题</strong></p>
 
-<p>看完之后，感触颇深，中国历史上从来不缺人才，估计是历史造就了那些人吧。</p>
+<p>总共有六种标题，＃号需要在一行的最前面，一级标题一个＃号，二级标题两个＃号，…</p>
 
-<p>最近总感觉该做点什么事，自己光闷头看书也不是个事，恰好看到了别人的github博客，于是我也就来凑凑热闹，准备来自己建一个博客。</p>
+<h1 id="section">一级标题</h1>
 
-<p>还是免费的，最适合我这样的 DS monkey 了。</p>
+<h2 id="section-1">二级标题</h2>
 
-<p>好吧，不瞎扯了，我要开始写博客了，嘻嘻。</p>
+<hr />
+<p><strong>换行</strong>  <br />
+可以使用html里面的”&lt;br&gt;”<br />
+也可以在每一行最后面空出至少两个空格后在换行</p>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c">	<span class="cp">#include &lt;stdio.h&gt;
-</span>
-	<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">)</span>
-	<span class="p">{</span>
+<hr />
+<p><strong>列表</strong><br />
+使用－、＊、＋ 即可变为无序列表</p>
+
+<ul>
+  <li>aaa</li>
+  <li>bbb</li>
+  <li>ccc</li>
+  <li>ddd
+    <ul>
+      <li>aaa</li>
+    </ul>
+  </li>
+</ul>
+
+<p>有序列表使用 ** 1. 2. 3. **</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	1. a
+	2. b
+	3. c
+</code></pre>
+</div>
+
+<hr />
+<p><strong>引用</strong>
+需要在文本前加上 &gt; (尖括号、大于号)即可</p>
+
+<blockquote>
+  <p>这是引用</p>
+</blockquote>
+
+<hr />
+
+<p><strong>图片与链接</strong></p>
+
+<p>图片为： <img src="" alt="" />{ImgCap}{/ImgCap}<br />
+链接为:  []()</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>直接引用为: &lt;&gt;(一对尖括号)貌似不起作用了
+www.google.com.hk
+</code></pre>
+</div>
+
+<hr />
+<p><em>粗体与斜体</em></p>
+
+<p>两个*号包含一段文本就是粗体，一个*包含就是斜体</p>
+
+<hr />
+<p><strong>表格</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>|Tables   | A   |B     |
+| --------|:---:|:----:|
+|1        | 1A  |1B    |
+|2        | 2A  | 2B   |
+</code></pre>
+</div>
+
+<p>生成以下的表格:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tables</th>
+      <th style="text-align: center">A</th>
+      <th style="text-align: center">B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td style="text-align: center">1A</td>
+      <td style="text-align: center">1B</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td style="text-align: center">2A</td>
+      <td style="text-align: center">2B</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><strong>代码框</strong><br />
+程序猿需要代码框,将代码用两个`（esc键）包起来(貌似有点问题)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>`#include &lt;stdio.h&gt;  int main(int argc, char **argv) {  
+	printf("fuck the wrold!\n");  
+	return 0;  }`
+</code></pre>
+</div>
+
+<hr />
+
+<p><strong>分割线</strong></p>
+
+<p>三个 * 或者三个 －</p>
+
+<hr />
+
+<p><strong>代码高亮</strong></p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++">	<span class="cp">#include &lt;stdio.h&gt;
+</span>	
+	<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
 		<span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
 		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="p">}</span></code></pre></figure>
+	<span class="p">}</span>	
+	</code></pre></figure>
+
+<hr />
+
+<p><strong>参考资料</strong></p>
+
+<p><a href="http://www.jianshu.com/p/1e402922ee32/">http://www.jianshu.com/p/1e402922ee32/</a></p>
 
 
   </div>
