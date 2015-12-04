@@ -1,0 +1,178 @@
+---
+layout: post
+title:	"C++嵌套类和局部类"
+date:	2015-12-04 17:00:00 +800
+categories:	 C++
+---
+
+	可以在一个类的范围内声明另一个类。这样的类称为“嵌套类”。 嵌套类被视为在封闭类的范围内且可在该范围内使用。若要从嵌套类的即时封闭范围之外的某个范围引用该类，则必须使用完全限定名。
+
+	// nestedclass.h
+	#ifndef NECLASS_H_INCLUDED
+	#define NECLASS_H_INCLUDED
+
+	class A
+	{
+	public:
+		A();
+		~A();
+
+		void operate();
+
+	private:
+		class B;        // 声明可以写类或者函数里面
+		B* m_b;
+	};
+
+
+	#endif // NECLASS_H_INCLUDED
+
+	
+	// nestedclass.cpp
+	
+	#include "nestedclass.h"
+	#include <iostream>
+	using namespace std;
+
+	class A::B
+	{
+	public:
+		B(){}
+		~B(){}
+
+		void operate() {
+			cout << "B operate!" << endl;
+		}
+	};
+
+	A::A()
+	{
+	}
+
+	A::~A()
+	{
+	}
+
+	void A::operate() {
+
+		m_b = new B;
+	
+		cout << "A operate!" << endl;
+		m_b->operate();
+
+	}
+	
+	// main.cpp
+	#include "nestedclass.h"
+
+	int main() {
+
+		A a;
+		a.operate();
+
+		return 0;
+	}
+	
+	// netsed_class_declarations.cpp 来自MSDN
+	class BufferedIO 
+	{
+	public:
+		enum IOError { None, Access, General };
+		
+		// Declare nested class BufferedInput
+		class BufferedInput 
+		{
+		public:
+			int read();
+			int good() {
+				return _inputerror == None;
+			}
+		private:
+			IOError _inputerror;
+		};
+	};
+	
+	// define member function read and good in file scope.
+	int BufferedIO::BufferedInput::read()
+	{
+		return(1);
+	}
+	/* //the same as:
+	
+	typedef BufferedIO::BufferedInput BIO_INPUT;
+	int BIO_INPUT::read() {
+		return(1);
+	}
+	*/
+	
+	嵌套类只能从封闭类中直接使用名称、类型名称，静态成员的名称和枚举数。若要使用其他类成员的名称，您必须使用指针、引用或对象名。
+	
+	// nested_class_declarations_2.cpp
+	class C
+	{
+	public:
+		typedef class U u_t; // class U visible outside class C scope    U应该是已经定义好了的 
+		typedef class V {} v_t; // class V not visible outside class C
+	};
+
+	int main()
+	{
+		// okay, forward declaration used above so file scope is used
+		U* pu;
+
+		// error, type name only exists in class C scope
+		u_t* pu2; // C2065
+
+		// error, class defined above so class C scope
+		V* pv; // C2065
+
+		// okay, fully qualified name
+		C::V* pv2;
+	}
+	
+	
+	嵌套类中的友元函数 
+	
+	// friend_functions_and_nested_classes.cpp
+	
+	#include <string.h>
+	
+	enum 
+	{
+		sizeOfMessage = 255,
+	};
+	
+	char *rgszMessage[sizeOfMessage];
+	
+	class BufferedIO
+	{
+	public:
+		class BufferedInput
+		{
+		public:
+			friend int GetExtendedErrorStatus();
+			static char *message;
+			static int 	messageSize;
+			int iMsgNo;
+		};
+	};
+	
+	char *BufferedIO::BufferedInput::message;
+	int BufferedIO::BufferedInput::messageSize;
+	
+	int GetExtendedErrorStatus()
+	{
+		// assign arbitrary value as message number
+		int iMsgNo = 1;
+		
+		strcpy_s(BufferedIO::BufferedInput::message,
+				 BufferedIO::BufferedInput::messageSize,
+				 rgszMessage[iMsgNo]);
+	}
+	
+	参考资料：
+	
+	<https://msdn.microsoft.com/zh-cn/library/x23h0937.aspx>
+	<http://www.cnblogs.com/charley_yang/archive/2011/04/05/2005897.html>
+	
+	

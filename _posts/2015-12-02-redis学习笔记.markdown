@@ -2,7 +2,7 @@
 layout: post
 title: "redis学习笔记"
 date: 2015-12-02 19:24:30 +0800
-categories: jekyll update
+categories: 学习笔记
 ---
 
 今日偶尔看到一篇好文章，有幸能够学习之。
