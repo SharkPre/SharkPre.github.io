@@ -1,0 +1,12 @@
+---
+layout: post
+title: Google开源项目风格指南
+date:  2015-12-04 17:00:00 +0800
+categories: C++
+---
+
+Google 开源项目风格指南  
+http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/#id2
+
+天下：这个人的博客还不错，值得一看  
+http://www.cppblog.com/aaxron/archive/2013/04/22/199634.html
