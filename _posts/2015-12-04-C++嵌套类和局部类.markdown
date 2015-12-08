@@ -1,11 +1,9 @@
 ---
 layout: post
-title:	"C++Ç¶Ì×ÀàºÍ¾Ö²¿Àà"
+title:	"C++åµŒå¥—ç±»å’Œå±€éƒ¨ç±»"
 date:	2015-12-04 17:00:00 +800
 categories:	 C++
 ---
-
-	¿ÉÒÔÔÚÒ»¸öÀàµÄ·¶Î§ÄÚÉùÃ÷ÁíÒ»¸öÀà¡£ÕâÑùµÄÀà³ÆÎª¡°Ç¶Ì×Àà¡±¡£ Ç¶Ì×Àà±»ÊÓÎªÔÚ·â±ÕÀàµÄ·¶Î§ÄÚÇÒ¿ÉÔÚ¸Ã·¶Î§ÄÚÊ¹ÓÃ¡£ÈôÒª´ÓÇ¶Ì×ÀàµÄ¼´Ê±·â±Õ·¶Î§Ö®ÍâµÄÄ³¸ö·¶Î§ÒıÓÃ¸ÃÀà£¬Ôò±ØĞëÊ¹ÓÃÍêÈ«ÏŞ¶¨Ãû¡£
 
 	// nestedclass.h
 	#ifndef NECLASS_H_INCLUDED
@@ -20,7 +18,7 @@ categories:	 C++
 		void operate();
 
 	private:
-		class B;        // ÉùÃ÷¿ÉÒÔĞ´Àà»òÕßº¯ÊıÀïÃæ
+		class B;        // Ã‰Ã¹ÃƒÃ·Â¿Ã‰Ã’Ã”ÃÂ´Ã€Ã Â»Ã²Ã•ÃŸÂºÂ¯ÃŠÃ½Ã€Ã¯ÃƒÃ¦
 		B* m_b;
 	};
 
@@ -73,7 +71,7 @@ categories:	 C++
 		return 0;
 	}
 	
-	// netsed_class_declarations.cpp À´×ÔMSDN
+	// netsed_class_declarations.cpp Ã€Â´Ã—Ã”MSDN
 	class BufferedIO 
 	{
 	public:
@@ -105,13 +103,11 @@ categories:	 C++
 	}
 	*/
 	
-	Ç¶Ì×ÀàÖ»ÄÜ´Ó·â±ÕÀàÖĞÖ±½ÓÊ¹ÓÃÃû³Æ¡¢ÀàĞÍÃû³Æ£¬¾²Ì¬³ÉÔ±µÄÃû³ÆºÍÃ¶¾ÙÊı¡£ÈôÒªÊ¹ÓÃÆäËûÀà³ÉÔ±µÄÃû³Æ£¬Äú±ØĞëÊ¹ÓÃÖ¸Õë¡¢ÒıÓÃ»ò¶ÔÏóÃû¡£
-	
 	// nested_class_declarations_2.cpp
 	class C
 	{
 	public:
-		typedef class U u_t; // class U visible outside class C scope    UÓ¦¸ÃÊÇÒÑ¾­¶¨ÒåºÃÁËµÄ 
+		typedef class U u_t; // class U visible outside class C scope    UÃ“Â¦Â¸ÃƒÃŠÃ‡Ã’Ã‘Â¾Â­Â¶Â¨Ã’Ã¥ÂºÃƒÃÃ‹ÂµÃ„ 
 		typedef class V {} v_t; // class V not visible outside class C
 	};
 
@@ -131,7 +127,7 @@ categories:	 C++
 	}
 	
 	
-	Ç¶Ì×ÀàÖĞµÄÓÑÔªº¯Êı 
+	// åµŒå¥—ç±»ä¸å‹å…ƒå‡½æ•° 
 	
 	// friend_functions_and_nested_classes.cpp
 	
@@ -170,9 +166,9 @@ categories:	 C++
 				 rgszMessage[iMsgNo]);
 	}
 	
-	²Î¿¼×ÊÁÏ£º
+##å‚è€ƒæ–‡æ¡£
 	
-	<https://msdn.microsoft.com/zh-cn/library/x23h0937.aspx>
-	<http://www.cnblogs.com/charley_yang/archive/2011/04/05/2005897.html>
+<https://msdn.microsoft.com/zh-cn/library/x23h0937.aspx>
+<http://www.cnblogs.com/charley_yang/archive/2011/04/05/2005897.html>
 	
 	

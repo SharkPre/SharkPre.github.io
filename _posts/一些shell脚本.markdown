@@ -1,6 +1,6 @@
 ---
 layout: post
-title:	"һЩshell�ű�"
+title:	"一些shell脚本"
 date:	2015-12-07 15:00:00 +0800
 categories: shell
 ---
@@ -9,6 +9,7 @@ categories: shell
 
 ## don't tested.
 
+** 1 **
 
 	#!/bin/bash
 	a=2009
@@ -30,6 +31,13 @@ categories: shell
 	b=1
 	
 
+** 2 **
+
+
+    shell 有两种类型，字符，整型数字
+    字符默认是 空 “”
+    数字默认是 0
+    
 	#!/bin/bash
 	c=""
 	echo "c=$c"
@@ -46,23 +54,22 @@ categories: shell
 	e=
 	e=1 
 	
+
+** 3 **
 	
-	shellһ���������͵ģ�����basn shell �ṩ��declare��typeset������������ָ������������
-	������������ȫ�ȼ�
+	shell变量一般是无类型的，但是bash shell提供了declare和typeset两个命令来制定变量的类型，这两个命令完全等价。
+	declare [选项] 变量
+	-r 声明为只读变量
+	-i 声明为整形变量
+	-a 将变量声明为数组
+	-f 显示此脚本前定义的所有函数名及其内容
+	-F 仅显示此脚本前定义过的所有函数名
+	-x 将变量声明为环境变量
 	
-	declare [ѡ��] ������
-	-r ����������Ϊֻ������
-	-i ����������Ϊ������
-	-a ����������Ϊ����
-	-f ��ʾ�˽ű�ǰ����������к�������������
-	-F ����ʾ�˽ű�ǰ����������к�����
-	-x ����������Ϊ��������
-	
-	
-	eg��
+	eg
 	#!/bin/bash
 	var1=2012
-	var2=$var1+1	#no declared�� so it's string.
+	var2=$var1+1	#no declared£¬ so it's string.
 	echo "var2=$var2"
 	
 	let "var3=$var1+1"	# let functioned.
@@ -89,7 +96,18 @@ categories: shell
 	echo $var3
 	
 	
+** 4 **
 	
+	
+	环境变量
+	ENVIRON-VARIABLE=value  #环境变量赋值
+	export ENVIRON-VARIABLE #声明环境变量
+	消除环境变量是unset
+	
+	env可以列出已经定义的环境变量
+	
+	pwd是当前的目录路径 
+	OLDPWD是旧的工作目录
 	
 	
 	

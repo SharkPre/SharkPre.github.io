@@ -128,21 +128,17 @@ categories: markdown语法
 
 双下划线 __Hello__  
 单下划线 _Heßllo_  
-Hello   等于号
-=====
-Hello     下划线 
------
-> \<p> 段落的使用
-<p>
+
+
+> 段落的使用  
   雄关漫道真如铁，而今迈道从头越。
-<p>
 
 
 ---
 
+ **参考资料**    
 
- **参考资料**  
- 
- <http://www.jianshu.com/p/1e402922ee32/>  
- <http://www.appinn.com/markdown/#p>  
- <http://ibruce.info/2013/11/26/markdown/>
+
+<http://www.jianshu.com/p/1e402922ee32>   <br>
+<http://www.appinn.com/markdown/#p>  		<br>
+<http://ibruce.info/2013/11/26/markdown/>  

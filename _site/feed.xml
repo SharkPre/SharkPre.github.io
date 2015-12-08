@@ -6,14 +6,211 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Dec 2015 00:27:26 +0800</pubDate>
-    <lastBuildDate>Thu, 03 Dec 2015 00:27:26 +0800</lastBuildDate>
+    <pubDate>Tue, 08 Dec 2015 23:36:10 +0800</pubDate>
+    <lastBuildDate>Tue, 08 Dec 2015 23:36:10 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Google开源项目风格指南</title>
+        <description>&lt;p&gt;Google 开源项目风格指南
+&lt;a href=&quot;http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/#id2&quot;&gt;http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/#id2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;天下：这个人的博客还不错，值得一看
+&lt;a href=&quot;http://www.cppblog.com/aaxron/archive/2013/04/22/199634.html&quot;&gt;http://www.cppblog.com/aaxron/archive/2013/04/22/199634.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 04 Dec 2015 17:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/c++/2015/12/04/Google%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/c++/2015/12/04/Google%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97.html</guid>
+        
+        
+        <category>C++</category>
+        
+      </item>
+    
+      <item>
+        <title>C++嵌套类和局部类</title>
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// nestedclass.h
+#ifndef NECLASS_H_INCLUDED
+#define NECLASS_H_INCLUDED
+
+class A
+{
+public:
+	A();
+	~A();
+
+	void operate();
+
+private:
+	class B;        // ÉùÃ÷¿ÉÒÔÐ´Àà»òÕßº¯ÊýÀïÃæ
+	B* m_b;
+};
+
+
+#endif // NECLASS_H_INCLUDED
+
+
+// nestedclass.cpp
+
+#include &quot;nestedclass.h&quot;
+#include &amp;lt;iostream&amp;gt;
+using namespace std;
+
+class A::B
+{
+public:
+	B(){}
+	~B(){}
+
+	void operate() {
+		cout &amp;lt;&amp;lt; &quot;B operate!&quot; &amp;lt;&amp;lt; endl;
+	}
+};
+
+A::A()
+{
+}
+
+A::~A()
+{
+}
+
+void A::operate() {
+
+	m_b = new B;
+
+	cout &amp;lt;&amp;lt; &quot;A operate!&quot; &amp;lt;&amp;lt; endl;
+	m_b-&amp;gt;operate();
+
+}
+
+// main.cpp
+#include &quot;nestedclass.h&quot;
+
+int main() {
+
+	A a;
+	a.operate();
+
+	return 0;
+}
+
+// netsed_class_declarations.cpp À´×ÔMSDN
+class BufferedIO 
+{
+public:
+	enum IOError { None, Access, General };
+	
+	// Declare nested class BufferedInput
+	class BufferedInput 
+	{
+	public:
+		int read();
+		int good() {
+			return _inputerror == None;
+		}
+	private:
+		IOError _inputerror;
+	};
+};
+
+// define member function read and good in file scope.
+int BufferedIO::BufferedInput::read()
+{
+	return(1);
+}
+/* //the same as:
+
+typedef BufferedIO::BufferedInput BIO_INPUT;
+int BIO_INPUT::read() {
+	return(1);
+}
+*/
+
+// nested_class_declarations_2.cpp
+class C
+{
+public:
+	typedef class U u_t; // class U visible outside class C scope    UÓ¦¸ÃÊÇÒÑ¾­¶¨ÒåºÃÁËµÄ 
+	typedef class V {} v_t; // class V not visible outside class C
+};
+
+int main()
+{
+	// okay, forward declaration used above so file scope is used
+	U* pu;
+
+	// error, type name only exists in class C scope
+	u_t* pu2; // C2065
+
+	// error, class defined above so class C scope
+	V* pv; // C2065
+
+	// okay, fully qualified name
+	C::V* pv2;
+}
+
+
+// 嵌套类与友元函数 
+
+// friend_functions_and_nested_classes.cpp
+
+#include &amp;lt;string.h&amp;gt;
+
+enum 
+{
+	sizeOfMessage = 255,
+};
+
+char *rgszMessage[sizeOfMessage];
+
+class BufferedIO
+{
+public:
+	class BufferedInput
+	{
+	public:
+		friend int GetExtendedErrorStatus();
+		static char *message;
+		static int 	messageSize;
+		int iMsgNo;
+	};
+};
+
+char *BufferedIO::BufferedInput::message;
+int BufferedIO::BufferedInput::messageSize;
+
+int GetExtendedErrorStatus()
+{
+	// assign arbitrary value as message number
+	int iMsgNo = 1;
+	
+	strcpy_s(BufferedIO::BufferedInput::message,
+			 BufferedIO::BufferedInput::messageSize,
+			 rgszMessage[iMsgNo]);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;参考文档&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-cn/library/x23h0937.aspx&quot;&gt;https://msdn.microsoft.com/zh-cn/library/x23h0937.aspx&lt;/a&gt;
+&lt;a href=&quot;http://www.cnblogs.com/charley_yang/archive/2011/04/05/2005897.html&quot;&gt;http://www.cnblogs.com/charley_yang/archive/2011/04/05/2005897.html&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 04 Dec 2015 17:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/c++/2015/12/04/C++%E5%B5%8C%E5%A5%97%E7%B1%BB%E5%92%8C%E5%B1%80%E9%83%A8%E7%B1%BB.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/c++/2015/12/04/C++%E5%B5%8C%E5%A5%97%E7%B1%BB%E5%92%8C%E5%B1%80%E9%83%A8%E7%B1%BB.html</guid>
+        
+        
+        <category>C++</category>
+        
+      </item>
     
       <item>
         <title>markdown语法</title>
         <description>&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;标题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.标题&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;总共有六种标题，＃号需要在一行的最前面，一级标题一个＃号，二级标题两个＃号，…&lt;/p&gt;
 
@@ -22,13 +219,15 @@
 &lt;h2 id=&quot;section-1&quot;&gt;二级标题&lt;/h2&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;换行&lt;/strong&gt;  &lt;br /&gt;
-可以使用html里面的”&amp;lt;br&amp;gt;”&lt;br /&gt;
-也可以在每一行最后面空出至少两个空格后在换行&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 换行&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;可以使用html里面的”&amp;lt;br&amp;gt;”&lt;br /&gt;
+也可以在&lt;a&gt;每一行最后面空出至少两个空格后在换行&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;列表&lt;/strong&gt;&lt;br /&gt;
-使用－、＊、＋ 即可变为无序列表&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 列表&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用－、＊、＋ 即可变为无序列表&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;aaa&lt;/li&gt;
@@ -50,8 +249,9 @@
 &lt;/div&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;引用&lt;/strong&gt;
-需要在文本前加上 &amp;gt; (尖括号、大于号)即可&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. 引用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;需要在文本前加上 &amp;gt; (尖括号、大于号)即可&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;这是引用&lt;/p&gt;
@@ -59,23 +259,21 @@
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;图片与链接&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. 图片与链接&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;图片为： &lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;{ImgCap}{/ImgCap}&lt;br /&gt;
-链接为:  []()&lt;/p&gt;
+链接为:  []()
+直接引用为: &amp;lt;&amp;gt;(一对尖括号)&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;直接引用为: &amp;lt;&amp;gt;(一对尖括号)貌似不起作用了
-www.google.com.hk
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.google.com.hk&quot;&gt;http://www.google.com.hk&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;em&gt;粗体与斜体&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;6. 粗体与斜体&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;两个*号包含一段文本就是粗体，一个*包含就是斜体&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;表格&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7. 表格&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|Tables   | A   |B     |
 | --------|:---:|:----:|
@@ -110,8 +308,9 @@ www.google.com.hk
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;代码框&lt;/strong&gt;&lt;br /&gt;
-程序猿需要代码框,将代码用两个`（esc键）包起来(貌似有点问题)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8. 代码框&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;程序猿需要代码框,将代码用两个`（esc键）包起来(貌似有点问题)&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`#include &amp;lt;stdio.h&amp;gt;  int main(int argc, char **argv) {  
 	printf(&quot;fuck the wrold!\n&quot;);  
@@ -121,13 +320,13 @@ www.google.com.hk
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;分割线&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9. 分割线&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;三个 * 或者三个 －&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;代码高亮&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10. 代码高亮&lt;/strong&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;	&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
 &lt;/span&gt;	
@@ -138,11 +337,29 @@ www.google.com.hk
 	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
+&lt;p&gt;** 11. 可用html的语法来控制markdown的排版 **&lt;/p&gt;
+
+&lt;p&gt;&lt;a&gt; markdown 文档也可以通过html的语法来控制文档的格式&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;12. 以下是一些其他的用法，我也就不一一说明了，有兴趣的自己看吧&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;双下划线 &lt;strong&gt;Hello&lt;/strong&gt;&lt;br /&gt;
+单下划线 &lt;em&gt;Heßllo&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;段落的使用&lt;br /&gt;
+  雄关漫道真如铁，而今迈道从头越。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;&lt;strong&gt;参考资料&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/1e402922ee32/&quot;&gt;http://www.jianshu.com/p/1e402922ee32/&lt;/a&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/1e402922ee32&quot;&gt;http://www.jianshu.com/p/1e402922ee32&lt;/a&gt;   &lt;br /&gt;
+&lt;a href=&quot;http://www.appinn.com/markdown/#p&quot;&gt;http://www.appinn.com/markdown/#p&lt;/a&gt;  		&lt;br /&gt;
+&lt;a href=&quot;http://ibruce.info/2013/11/26/markdown/&quot;&gt;http://ibruce.info/2013/11/26/markdown/&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 03 Dec 2015 00:10:00 +0800</pubDate>
         <link>http://yourdomain.com/markdown%E8%AF%AD%E6%B3%95/2015/12/03/markdown%E8%AF%AD%E6%B3%95.html</link>
@@ -240,13 +457,11 @@ www.google.com.hk
 &lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html&quot;&gt;八天学通mongoDB&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 02 Dec 2015 19:24:30 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</guid>
+        <link>http://yourdomain.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>学习笔记</category>
         
       </item>
     

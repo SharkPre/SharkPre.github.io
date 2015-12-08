@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>markdown语法</title>
-  <meta name="description" content="1.标题">
+  <title>Google开源项目风格指南</title>
+  <meta name="description" content="Google 开源项目风格指南http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/#id2">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/markdown%E8%AF%AD%E6%B3%95/2015/12/03/markdown%E8%AF%AD%E6%B3%95.html">
+  <link rel="canonical" href="http://yourdomain.com/c++/2015/12/04/Google%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97.html">
   <link rel="alternate" type="application/rss+xml" title="我不是坏人" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,162 +57,16 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">markdown语法</h1>
-    <p class="post-meta"><time datetime="2015-12-03T00:10:00+08:00" itemprop="datePublished">Dec 3, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">Google开源项目风格指南</h1>
+    <p class="post-meta"><time datetime="2015-12-04T17:00:00+08:00" itemprop="datePublished">Dec 4, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <hr />
-<p><strong>1.标题</strong></p>
+    <p>Google 开源项目风格指南
+<a href="http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/#id2">http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/#id2</a></p>
 
-<p>总共有六种标题，＃号需要在一行的最前面，一级标题一个＃号，二级标题两个＃号，…</p>
-
-<h1 id="section">一级标题</h1>
-
-<h2 id="section-1">二级标题</h2>
-
-<hr />
-<p><strong>2. 换行</strong></p>
-
-<p>可以使用html里面的”&lt;br&gt;”<br />
-也可以在<a>每一行最后面空出至少两个空格后在换行</a></p>
-
-<hr />
-<p><strong>3. 列表</strong></p>
-
-<p>使用－、＊、＋ 即可变为无序列表</p>
-
-<ul>
-  <li>aaa</li>
-  <li>bbb</li>
-  <li>ccc</li>
-  <li>ddd
-    <ul>
-      <li>aaa</li>
-    </ul>
-  </li>
-</ul>
-
-<p>有序列表使用 ** 1. 2. 3. **</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	1. a
-	2. b
-	3. c
-</code></pre>
-</div>
-
-<hr />
-<p><strong>4. 引用</strong></p>
-
-<p>需要在文本前加上 &gt; (尖括号、大于号)即可</p>
-
-<blockquote>
-  <p>这是引用</p>
-</blockquote>
-
-<hr />
-
-<p><strong>5. 图片与链接</strong></p>
-
-<p>图片为： <img src="" alt="" />{ImgCap}{/ImgCap}<br />
-链接为:  []()
-直接引用为: &lt;&gt;(一对尖括号)</p>
-
-<p><a href="http://www.google.com.hk">http://www.google.com.hk</a></p>
-
-<hr />
-<p><em>6. 粗体与斜体</em></p>
-
-<p>两个*号包含一段文本就是粗体，一个*包含就是斜体</p>
-
-<hr />
-<p><strong>7. 表格</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>|Tables   | A   |B     |
-| --------|:---:|:----:|
-|1        | 1A  |1B    |
-|2        | 2A  | 2B   |
-</code></pre>
-</div>
-
-<p>生成以下的表格:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tables</th>
-      <th style="text-align: center">A</th>
-      <th style="text-align: center">B</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td style="text-align: center">1A</td>
-      <td style="text-align: center">1B</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td style="text-align: center">2A</td>
-      <td style="text-align: center">2B</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<p><strong>8. 代码框</strong></p>
-
-<p>程序猿需要代码框,将代码用两个`（esc键）包起来(貌似有点问题)</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>`#include &lt;stdio.h&gt;  int main(int argc, char **argv) {  
-	printf("fuck the wrold!\n");  
-	return 0;  }`
-</code></pre>
-</div>
-
-<hr />
-
-<p><strong>9. 分割线</strong></p>
-
-<p>三个 * 或者三个 －</p>
-
-<hr />
-
-<p><strong>10. 代码高亮</strong></p>
-
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++">	<span class="cp">#include &lt;stdio.h&gt;
-</span>	
-	<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
-		<span class="n">printf</span><span class="p">(</span><span class="s">"Hello World!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="p">}</span>	
-	</code></pre></figure>
-
-<hr />
-<p>** 11. 可用html的语法来控制markdown的排版 **</p>
-
-<p><a> markdown 文档也可以通过html的语法来控制文档的格式</a></p>
-
-<hr />
-
-<p><strong>12. 以下是一些其他的用法，我也就不一一说明了，有兴趣的自己看吧</strong></p>
-
-<p>双下划线 <strong>Hello</strong><br />
-单下划线 <em>Heßllo</em></p>
-
-<blockquote>
-  <p>段落的使用<br />
-  雄关漫道真如铁，而今迈道从头越。</p>
-</blockquote>
-
-<hr />
-
-<p><strong>参考资料</strong></p>
-
-<p><a href="http://www.jianshu.com/p/1e402922ee32">http://www.jianshu.com/p/1e402922ee32</a>   <br />
-<a href="http://www.appinn.com/markdown/#p">http://www.appinn.com/markdown/#p</a>  		<br />
-<a href="http://ibruce.info/2013/11/26/markdown/">http://ibruce.info/2013/11/26/markdown/</a></p>
+<p>天下：这个人的博客还不错，值得一看
+<a href="http://www.cppblog.com/aaxron/archive/2013/04/22/199634.html">http://www.cppblog.com/aaxron/archive/2013/04/22/199634.html</a></p>
 
   </div>
 
