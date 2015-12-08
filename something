@@ -1,0 +1,98 @@
+
+
+linux执行命令的时候，会先去PATH中寻找命令所在的目录
+
+HOME 记录了当前用户的根目录
+
+SHELL 保存缺省Shell，默认是/bin/bash
+
+USER 和 UID 是保存用户信息的环境变量，
+
+USR 表示已经登录的用户的名字，UID 表示已经登录的用户的ID
+
+PPID 是创建当前进程的进程号，即当前进程的父进程号
+
+PS1 和 PS2( linux有PS1 PS2 PS3 PS4)
+提示符变量，用于设置提示符格式
+PS1用于设置一级shell提示符的环境变量，也称为主提示符字符串，即[root @jselab ~]#
+like：[\u@\h \W]\$
+\u 表示当前用户
+\h 表示主机名
+\W 表示当前目录名
+\$ 则表示$号 
+
+echo $PS2 则显示 : >
+
+提示符变量中的特殊符号及其意义
+\d 以"周 月 日"格式来显示的日期的日期信息
+\H 主机名和域名  host
+\h 主机名 		 host
+\s Shell的类型名称 shell
+\T 以12小时制显示时间 格式为 HH:MM:SS time
+\t 以24小时制显示时间 格式为 HH:MM:SS time
+\@ 以12小时制显示时间 格式为 am/pm 12小时制显示时间 
+\u 当前的用户名		user
+\v bash Shell的版本号 version
+\V bash Shell的版本号和补丁号 
+\w 当前工作目录的完整路径 way
+\W 当前工作目录名字
+\# 当前命令的序列号 #sequence
+\$ 如果UID为0 打印# 否则，打印$
+
+几个重要的配置文件 
+
+$HOME/.bash_profile 是最重要的配置文件，当某用户登录时，Shell会自动执行.bash_profile文件，
+当.bash_profile文件不存在时，则自动执行系统默认的配置文件/etc/profile
+
+/etc/profile 全局用户文件，如果修改了此文件，修改的设置只会影响单个用户
+~/.bash_profile 用户的个人配置，如果修改此文中的设置，只会影响单个用户 
+/etc/bashrc 全局变量配置文件，此文件中定义了所有用户的环境变量
+~/.bashrc 个人环境配置文件，此文件中定义了用户的环境变量
+
+eg:
+#/etc/profile: system-wide .profilefile for the Bourne shell (sh(1))
+#and Bourne compatible shells(bash(1), ksh(1), ash(1), ... )
+
+if ["$PS1"]; then
+	if ["$BASH"] && ["BASH"!="/bin/sh"]; then
+	# the file bash.bashrc already sets the default PS1 
+	# PS1="\h:\W\$"
+		if [-f /etc/bash.bashrc]; then
+			./etc/bash.bashrc
+		fi 
+	else
+		if ["`id -u`" -eq 0]; then
+			PS1 = '#'
+		else
+			PS1 = '$'
+		fi
+	fi
+fi
+
+
+# The default umask is now handledby pam_umask
+# See pam_umask(8) and/etc/login.defs.
+
+if [-d /etc/profile.d]; then
+	for i in /etc/profile.d/*.sh; do
+		if [-r $i]; then
+			.$i 
+		fi
+	done
+	unset i
+fi
+
+export JAVA_HOME=/usr/lib/jvm/jdk1.7.4_04
+export JRE_HOME-${JAVA_HOME}/jre
+export CLASSPATH=$CLASSPATH::$JAVA_HOME/lib:$JAVA_HOME/jre/lib
+export CATALINA_HOME=/home/ming/prosoft/tomcat7
+export ANT_HOME=/home/ming/prosoft/apache-ant-1.8.4 
+export PATH=$PATH:/home/ming/prosoft/apache-1.8.4/bin
+
+如果要加入=的行立即生效,需要利用source命令执行.bash_profile文件 
+source命令也被称为点命令，即句点符号"." 和 source命令是等价的 
+eg:
+. .bash_profile # 注意：句点符号和后面的文件用空格分开 
+
+
+	
