@@ -70,8 +70,9 @@ categories:	 C++
 
 		return 0;
 	}
+
+<img src="/assets/1.png" alt="1.png" class="img-center" width="675" height="190"/>	
 	
-![1.png]({{ site.url }}/_assert/1.png)
 	
 	// netsed_class_declarations.cpp À´×ÔMSDN
 	class BufferedIO 
