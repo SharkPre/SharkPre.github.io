@@ -71,7 +71,7 @@ categories:	 C++
 		return 0;
 	}
 	
-![1.png](/_assert/1.png)
+![1.png]({{ site.url }}/_assert/1.png)
 	
 	// netsed_class_declarations.cpp À´×ÔMSDN
 	class BufferedIO 
