@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Dec 2015 00:04:32 +0800</pubDate>
-    <lastBuildDate>Wed, 09 Dec 2015 00:04:32 +0800</lastBuildDate>
+    <pubDate>Wed, 09 Dec 2015 23:21:27 +0800</pubDate>
+    <lastBuildDate>Wed, 09 Dec 2015 23:21:27 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -130,7 +130,7 @@ int main() {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;../_assert/1.png&quot; alt=&quot;1.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/_assert/1.png&quot; alt=&quot;1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// netsed_class_declarations.cpp À´×ÔMSDN
 class BufferedIO 
