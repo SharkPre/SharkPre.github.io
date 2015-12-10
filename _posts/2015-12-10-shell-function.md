@@ -9,8 +9,10 @@ categories: shell
 + 都由小写字母和下划线组成，并以字母开头  
 + 不要使用命令作为函数名称 
 + 不要在函数名中使用特殊字符   
+ 
     
-    
+{% highlight C++ %}
+  
     	#!/bin/bash
    		# 等号两边不能有空格
     	# 判断语句里面要有空格
@@ -108,6 +110,8 @@ categories: shell
     	fabnaci 10
     	echo $?     #上次函数调用的返回值
 
+
+{% endhighlight %}
 
 ### Result:
 
