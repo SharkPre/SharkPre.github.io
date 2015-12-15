@@ -1,0 +1,28 @@
+
+#!/bin/bash
+echo -n "Enter your name:"
+read
+echo "read without anyvariables:REPLY=$REPLY"
+echo -n "Enter your age:"
+read age
+echo "read with variable:Age=$age and REPLY=$REPLY"
+
+echo "which one are you skilledin?"
+select var in "shell" "java" "c++" "c" "php" "c#"
+do
+    echo "the \$REPLY=$REPLY"
+    echo "you are skilled in $var"
+    break
+done
+
+count=1
+MAX=5
+while [ "$SECONDS" -le "$MAX" ]
+do
+    echo "this is the $count time to sleep!"
+    let count=$count+1
+    sleep 2
+done
+echo "this script runs $SECONDS seconds!"
+
+
