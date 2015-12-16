@@ -279,7 +279,7 @@ categories: shell
 	  eg
 	    [plain] view plaincopy
 	    #!/bin/bash  
-	    trap "echo 'execute trap !'" INT  #接收 INT信号 即ctrl + c  
+	    trap "echo 'execute trap !'" INT  #接收 INT信号 即ctrl +ｃ  
 	    count=1  
 	    while : ;  
 	    do  
