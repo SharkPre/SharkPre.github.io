@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Apr 2016 00:06:56 +0800</pubDate>
-    <lastBuildDate>Wed, 13 Apr 2016 00:06:56 +0800</lastBuildDate>
+    <pubDate>Wed, 13 Apr 2016 00:14:35 +0800</pubDate>
+    <lastBuildDate>Wed, 13 Apr 2016 00:14:35 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -222,334 +222,6 @@ int main()
         <category>C++</category>
         
         <category>template</category>
-        
-      </item>
-    
-      <item>
-        <title>Shell</title>
-        <description>&lt;hr /&gt;
-&lt;p&gt;layout: post
-title: “Somethign about Shell”
-date: 2015-12-15 00:12:34 +0800
-categories: shell
-——&lt;/p&gt;
-
-&lt;p&gt;[转载自：]&lt;a href=&quot;http://blog.csdn.net/anders_zhuo/article/details/8644207&quot;&gt;http://blog.csdn.net/anders_zhuo/article/details/8644207&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&quot;Enter your name:&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;read
-echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;read without anyvariables:REPLY=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$REPLY&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&quot;Enter your age:&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;age
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;read with variable:Age=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$age&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; and REPLY=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$REPLY&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;which one are you skilledin?&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;var &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;shell&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;java&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c++&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;php&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c#&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;do
-	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;the &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;REPLY=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$REPLY&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;you are skilled in &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$var&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;break
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;done
-
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
-&lt;span class=&quot;nv&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;5	
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SECONDS&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; -le &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MAX&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;do
-	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;this is the &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; time to sleep!&quot;&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt;+1
-	sleep 2
-&lt;span class=&quot;k&quot;&gt;done
-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;this script runs &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SECONDS&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; seconds!&quot;&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# strlen(str) ${#str} or exptr length $string&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# expr index $string $substring&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# expr index &quot;Speeding up small jobs in Hadoop&quot; jobs&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 0x13&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# get substring	&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#{string:position:length} &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#{...} # 从零开始标记字符串 from left to right&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#{string: -position} #冒号和横杆之间有空格 从右边开始取&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#{string:(position)} &lt;/span&gt;
-expr substr &lt;span class=&quot;nv&quot;&gt;$string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$position&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$length&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#从名称为$string的字符串的第#position位置开始		取长度为$length的子串&lt;/span&gt;
-
-delete sunstring
-&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;#substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string开头处与substring匹配的最短子串&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;##substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string子串与substring匹配的最长子串&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string结尾处与substring匹配的最短子串&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%%substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string结尾处与substring匹配的最长子串&lt;/span&gt;
-
-
-eg
-定义一个字符串   20121114ReadingHadoop
-ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$anotherstr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;20121114ReadingHadoop
-ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$anotherstr&lt;/span&gt;
-20121114ReadingHadoop
-删除开头处 以 2开始1结尾的  最短字符串！！
-ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;#2*1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-21114ReadingHadoop
-删除开头处 以 2开始1结尾的  最长字符串！！
-ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;##2*1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-4ReadingHadoop
-删除结尾处 以 a开始p结尾的  最短字符串！！
-ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%a*p&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-20121114ReadingH
-删除结尾处 以 a开始p结尾的  最长字符串！！
-ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%%a*p&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
-20121114Re
-
-5 替换子串
-替换子串命令都是&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;…&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;格式，可以在任意处、开头处和结尾处替换满足条件的子串
-&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;#仅替换第一次与substring相匹配的子串  &lt;/span&gt;
- 	&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;//substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#替换所有与substring相匹配的子串  &lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/#substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#替换string开头处与substring相匹配的子串  &lt;/span&gt;
- 	&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/%substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#替换string结尾处与substring相匹配的子串  &lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;io&quot;&gt;IO重定向&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	I/O重定向是一个过程，这个过程捕捉一个文件、或命令、或程序、或脚本、甚至代码块（code block）的输出，然后把捕捉到的输出，作为输入发送给另外一个文件、或命令、或程序、或脚本
-	
-	文件标识符是从0开始到9结束的整数，指明了与进程相关的特定数据流的源
-	
-	Linux系统启动一个进程（该进程可能用于执行Shell命令）时，将自动为该进程打开三个文件：标准输入、标准输出和标准错误输出，分别由文件标识符0、1、2标识
-
-	Shell命令从标准输入读取输入数据，将输出送到标准输出，如果该命令在执行过程中发生错误，则将错误信息输出到标准错误输出，默认情况下，标准输入与键盘输入相关联，标准输出和标准错误输出与显示器相关联
-&quot;&quot; 标准输出： &quot;&quot;
-例1
-	cat和&amp;gt;符号结合成为简易文本编辑器
-	cat命令后不加任何参数时，cat命令的输入是标准输入，即键盘输入
-	利用I/O重定向符号“&amp;gt;”将键盘输入写入文件
-	cat &amp;gt; newfile后，就可输入需要写到newfile的内容，最后按CTRL+D结束对newfile的编辑
-
-例2
-	&amp;gt;&amp;gt;符号用于在已有文件后追加一些文本
-	eg
-	ls &amp;gt;&amp;gt;newfile  只是追加并没有把原来的覆盖掉
-	ls &amp;gt;newfile   将文件清空，然后将内容写进去
-
-例3
-	&amp;gt;|符号是强制覆盖文件的符号，它与Shell的noclobber选项有关系，如果noclobber选项开启，表		示不允许覆盖任何文件，而&amp;gt;|符号则可以不管noclobber选项的作用，强制将文件覆盖
-	eg
-	ming@ming-F83VF:~/shellpractice/chapter10$set -C  noclobber选项开启
-	ming@ming-F83VF:~/shellpractice/chapter10$date &amp;gt;newfile
-	bash: newfile: 无法覆盖已存在的文件
-
-	ming@ming-F83VF:~/shellpractice/chapter10$date &amp;gt;|newfile
-	ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
-	2012年 11月 10日 星期日 09:47:25 CST
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;标准错误输出：&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1
-重定向标准错误输出，需要使用文件标识符2
- 	2&amp;gt; newfile
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
- 	eg 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ming@ming-F83VF:~/shellpractice/chapter10$ ls 22*&amp;gt;newfile 此时是将标准输出到	newfile中  但是屏幕中还是会输出，因为他是标准输出 
-ls: 无法访问22*: 没有那个文件或目录
-ming@ming-F83VF:~/shellpractice/chapter10$ls 22* 2&amp;gt;newfile 
-此时是将标准错误输出到	newfile中所以屏幕中没有任何输出
-ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
-ls: 无法访问22*: 没有那个文件或目录
-
-2
-&amp;lt; 是I/O重定向的输入符号，它可将文件内容写到标准输入之中
- 
-ming@ming-F83VF:~/shellpractice/chapter10$ wc -l &amp;lt;newfile
-1
-这个newfile作为标准输入到wc 所以wc得到的内容只是newfile的内容！！
-所以他不会知道这是哪个文件！所以只是打印出了文件行数
- 
-ming@ming-F83VF:~/shellpractice/chapter10$wc -l newfile
-1 newfile
-这个newfile作为wc命令的 操作文件。此时wc知道他要计数的是哪个文件，所以能打印出newfile文件名，因此既打印出了行数也打印出了文件名
- 
-&amp;lt;&amp;lt;delimiter  这个比较重要！！！
-符号称为此处文档（Here-document），delimiter称为分界符，该符号表明：Shell将分界符delimiter之后直至下一个delimiter之前的所有内容作为输入
- 
-ming@ming-F83VF:~/shellpractice/chapter10$cat &amp;gt;newfile &amp;lt;&amp;lt;CLOUD
-&amp;gt; hello cloud
-&amp;gt; hadoop
-&amp;gt; nosql
-&amp;gt; CLOUD
-(剖析：cat&amp;gt;newfile 是将标准输入到newfile文件中，即键盘输入newfile&amp;lt;&amp;lt;CLOUD是将输入到CLOUD之前的内容作为标准输入在此之前是用ctrl+d 结束标准输入，而使用&amp;lt;&amp;lt;  则是吧CLOUD作为结束标准输入)
- 
-ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
-hello cloud
-hadoop
-nosql
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
- 	1) 内建命令 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	父子Shell是相对的，描述了两个Shell进程的fork关系，父Shell指在控制终端或xterm窗口给出提示符的进程，子Shell是由父Shell创建的进程
-	Shell命令可分为内建命令（built-incommand）和外部命令（external command）内建命令是由Shell本身执行的命令
-	外部命令由fork出来的子Shell执行
-	内建命令不创建子Shell，外部命令创建子Shell，因此，内建命令的执行速度要比外部命令快
-
-2) 冒号: 冒号表示永真 相当于 TRUE 关键字
-	eg
-	#!/bin/bash
-	declare -i i=0
-	while : ;
-	do
-		if [ $i -eq 10 ]; then
-			break
-		fi
-		echo $((++i))
-	done
-	
-	# 冒号可以被用来清空文件 
-	# :&amp;gt;filename  
-
-3) 圆括号可以将其中的命令运行在子shell中
-	(
-		command1
-		command2
-		...
-	)
-	
-  # BASH_SUBSHELL 该变量记录了 shell 的层次·
-  eg
-	#!/bin/bash
-	echo &quot;the level of father shell is $BASH_SUBSHELL&quot;
-	outvar=outvar
-	(
-	 echo &quot;the level of sub shell is $BASH_SUBSHELL&quot;
-	 innervar=innervar
-	 echo &quot;outvar=$outvar&quot; #子shell继承了父shell的变量
-	 echo &quot;innervar=$innervar&quot;
-	)
-	echo &quot;the level of father shell is $BASH_SUBSHELL&quot;
-	if [ -z $innervar ]
-	then
-		echo &quot;the innervar is $innervar&quot;
-	else
-		echo &quot;the outvar is $outvar&quot;
-	fi
-result:
-	the level of father shell is 0
-	the level of sub shell is 1
-	outvar=outvar
-	innervar=innervar
-	the level of father shell is 0
-	the innervar is
-	
-由此可见：
-	子shell继承父shell的变量，而父shell不会得到子shell的变量
-	另外父shell也不能使用子shell定义的环境变量
-
-4) Shell 的限制模式
-   以前的Shell模式都是运行在正常模式下的，shell还有一种模式称为限制模式，简称rsh(Restricted Shell),处于限制模式下的shell运行一段代码或者片段，将会禁用一些命令或操作。
-   shell的限制模式是Linux系统基于安全方面的考虑，目地是为了限制脚本用户的权限，尽可能的减小脚本所带来的危害。
-
-
-   bash Shell的限制模式借鉴了Korn Shell的限制性命令和操作，限制的命令和操作包含如下几方面：
-   用cd命令更改当前工作目录的命令
-   更改重要环境变量的值，包括$PATH、$SHELL、$BASH_ENV、$ENV和$SHELLOPTS
-   输出重定向符号，包括&amp;gt;、&amp;gt;&amp;gt;、&amp;gt;|、&amp;gt;&amp;amp;、&amp;lt;&amp;gt;和&amp;amp;&amp;gt;符号
-   调用含有一个或多个斜杠（/）的命令名称
-   使用内建命令exec
-   使用set +r等命令关闭限制模式
-   使脚本运行在限制性模式下的两种方式：
-   第一种：set -r命令开启restricted选项
-   第二种：  #!后的语句改成/bin/bash -r
-
-5) 进程号和作业号 
-   进程号和作业号
-   Linux系统为每个进程分配一个数字以标识这个进程，这个数字就是进程号
-   创建该进程的Shell为此进程创建一个数字，也用于标识这个进程，这个数字称为作业号
-   作业号标识的是在此Shell下运行的所有进程，我们知道，Linux是多用户的系统，多用户可能开启了多个Shell，进程号就标识了整个系统下正在运行的所有进程
-   举例说明：
-   [root@jselab shell-book]# grep -r&quot;root&quot; /etc/* | sort &amp;gt; part1 &amp;amp;
- 	   [1] 4693
-   [root@jselab shell-book]# grep -r&quot;root&quot; /usr/local/* | sort &amp;gt; part2 &amp;amp;
-   [2] 4695		  
-
-   作业有两种运行方式：前台运行和后台运行
-   前台运行的作业指作业能够控制当前终端或窗口，且能接收用户的输入
-   后台运行的作业则不在当前激活的终端或窗口中运行，是在用户“看不见”的情况下运行
-   内建命令fg可将后台运行的作业放到前台，
-   而&amp;amp;符号使得作业后台运行，
- 
-   CTRL+Z组合键可以使作业转入阻塞态，
-   bg命令可使阻塞态作业转入后台运行
-   fg、bg和jobs命令只能以作业号为参数来指定作业，这三个命令是不能使用进程号的
-   disown命令用于从Shell的作业表中删除作业，作业表指得就是由jobs命令所列出的作业列表
-   wait命令用于等待后台作业完成，
-
-6) 信号
-
-   信号是Linux进程间通信的一个重要而复杂的概念，信号是在软件层次上对中断机制的一种模拟
-   信号是异步的，一个进程不必通过任何操作来等待信号的到达，事实上，进程也不知道信号到底什么时候到达
-   信号来源：硬件来源和软件来源
-   组合键
-   信号类型
-   意义
-       CTRL+C 	INT信号，即interrupt信号 	停止当前运行的作业
-   CTRL+Z	TSTP信号，即terminal stop信号	使当前运行的作业暂时停止（转入阻塞态）
-   CTRL+\	QUIT信号			CTRL+C的强化版本，当CTRL+C无法停止作业时，使用此组合键
-   CTRL+Y	TSTP信号，即terminal stop信号	当进程从终端读取输入数据时，暂时停止该进程
-   对于shell能执行  停止 暂停等功能，是因为向shell发送了了信号。
-   如表中信号：INT TSTP等
- 
-   CTRL+C，INT信号，退出作业
-   CTRL+\, QUIT信号， CTRL+C的强化版本
-   CTRL+Y组合键实际上与CTRL+Z组合键是类似的，都是向进程发送TSTP信号，表示将进程暂时停止
-   kill命令可以通过进程号、作业号或进程命令名向任何作业发送信号
-   kill –l列出kill命令能发出的所有信号
-
-
-7) trap命令
-  trap是Linux的内建命令，它用于捕捉信号
-  指定收到某种信号时所执行的命令
-  trap command sig1 sig2 …sigN
-   trap命令表示当收到sig1、sig2、…、sigN中任意一个信号时，执行command命令，command命令完成后脚本继续收到信号前的操作，直到脚本执行结束
-  eg
-    [plain] view plaincopy
-    #!/bin/bash  
-    trap &quot;echo &#39;execute trap !&#39;&quot; INT  #接收 INT信号 即ctrl + c  
-    count=1  
-    while : ;  
-    do  
-    	echo &quot;this is $count&quot;  
- 		let &quot;count+=1&quot;  
- 		sleep 5  
-    done  
-   运行结果：每当　按下ctrl+c的时候都会被trap接收到，然后执行引号中的命令
-   anders@anders-virtual-machine:~/code/shell/subandthread$./trap1.sh
-   this is 1
-   this is 2
-   ^Cexecute trap !
-   this is 3
-   ^Cexecute trap !
-   this is 4
-   ^Cexecute trap !
-   trap命令还可以
-   忽略某些信号，即进程收到某些信号后不做任何处理，我们只要简单将trap命令的command用空字符串代替即可（&quot;&quot;或&#39;&#39;）
-	#!/bin/bash 
-	trap &quot;&quot; TERM SIGKILL INT 
-	while :; do
-		#let count=count+1
- 			#echo &quot;This is the $count sleep&quot;
- 			sleep 5
-	done
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 15 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://yourdomain.com/2015/12/15/shell.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/12/15/shell.html</guid>
-        
         
       </item>
     
@@ -875,6 +547,329 @@ OLDPWD是旧的工作目录
         <pubDate>Mon, 07 Dec 2015 15:00:00 +0800</pubDate>
         <link>http://yourdomain.com/shell/2015/12/07/shell.html</link>
         <guid isPermaLink="true">http://yourdomain.com/shell/2015/12/07/shell.html</guid>
+        
+        
+        <category>shell</category>
+        
+      </item>
+    
+      <item>
+        <title>Somethign about Shell</title>
+        <description>&lt;p&gt;[转载自：]&lt;a href=&quot;http://blog.csdn.net/anders_zhuo/article/details/8644207&quot;&gt;http://blog.csdn.net/anders_zhuo/article/details/8644207&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&quot;Enter your name:&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;read
+echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;read without anyvariables:REPLY=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$REPLY&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&quot;Enter your age:&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;age
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;read with variable:Age=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$age&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; and REPLY=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$REPLY&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;which one are you skilledin?&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;var &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;shell&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;java&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c++&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;php&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;c#&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;the &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\$&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;REPLY=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$REPLY&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;you are skilled in &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$var&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;break
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;done
+
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+&lt;span class=&quot;nv&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;5	
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SECONDS&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; -le &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MAX&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+	&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;this is the &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; time to sleep!&quot;&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt;+1
+	sleep 2
+&lt;span class=&quot;k&quot;&gt;done
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;this script runs &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SECONDS&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; seconds!&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# strlen(str) ${#str} or exptr length $string&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# expr index $string $substring&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# expr index &quot;Speeding up small jobs in Hadoop&quot; jobs&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 0x13&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# get substring	&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#{string:position:length} &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#{...} # 从零开始标记字符串 from left to right&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#{string: -position} #冒号和横杆之间有空格 从右边开始取&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#{string:(position)} &lt;/span&gt;
+expr substr &lt;span class=&quot;nv&quot;&gt;$string&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$position&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$length&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#从名称为$string的字符串的第#position位置开始		取长度为$length的子串&lt;/span&gt;
+
+delete sunstring
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;#substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string开头处与substring匹配的最短子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;##substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string子串与substring匹配的最长子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string结尾处与substring匹配的最短子串&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%%substring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#删除string结尾处与substring匹配的最长子串&lt;/span&gt;
+
+
+eg
+定义一个字符串   20121114ReadingHadoop
+ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$anotherstr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;20121114ReadingHadoop
+ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$anotherstr&lt;/span&gt;
+20121114ReadingHadoop
+删除开头处 以 2开始1结尾的  最短字符串！！
+ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;#2*1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+21114ReadingHadoop
+删除开头处 以 2开始1结尾的  最长字符串！！
+ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;##2*1&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+4ReadingHadoop
+删除结尾处 以 a开始p结尾的  最短字符串！！
+ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%a*p&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+20121114ReadingH
+删除结尾处 以 a开始p结尾的  最长字符串！！
+ming@ming-F83VF:~/shellpractice/chapter9&lt;span class=&quot;nv&quot;&gt;$echo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;anotherstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%%a*p&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+20121114Re
+
+5 替换子串
+替换子串命令都是&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;…&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;格式，可以在任意处、开头处和结尾处替换满足条件的子串
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;#仅替换第一次与substring相匹配的子串  &lt;/span&gt;
+ 	&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;//substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#替换所有与substring相匹配的子串  &lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/#substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#替换string开头处与substring相匹配的子串  &lt;/span&gt;
+ 	&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/%substring/replacement&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#替换string结尾处与substring相匹配的子串  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;io&quot;&gt;IO重定向&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	I/O重定向是一个过程，这个过程捕捉一个文件、或命令、或程序、或脚本、甚至代码块（code block）的输出，然后把捕捉到的输出，作为输入发送给另外一个文件、或命令、或程序、或脚本
+	
+	文件标识符是从0开始到9结束的整数，指明了与进程相关的特定数据流的源
+	
+	Linux系统启动一个进程（该进程可能用于执行Shell命令）时，将自动为该进程打开三个文件：标准输入、标准输出和标准错误输出，分别由文件标识符0、1、2标识
+
+	Shell命令从标准输入读取输入数据，将输出送到标准输出，如果该命令在执行过程中发生错误，则将错误信息输出到标准错误输出，默认情况下，标准输入与键盘输入相关联，标准输出和标准错误输出与显示器相关联
+&quot;&quot; 标准输出： &quot;&quot;
+例1
+	cat和&amp;gt;符号结合成为简易文本编辑器
+	cat命令后不加任何参数时，cat命令的输入是标准输入，即键盘输入
+	利用I/O重定向符号“&amp;gt;”将键盘输入写入文件
+	cat &amp;gt; newfile后，就可输入需要写到newfile的内容，最后按CTRL+D结束对newfile的编辑
+
+例2
+	&amp;gt;&amp;gt;符号用于在已有文件后追加一些文本
+	eg
+	ls &amp;gt;&amp;gt;newfile  只是追加并没有把原来的覆盖掉
+	ls &amp;gt;newfile   将文件清空，然后将内容写进去
+
+例3
+	&amp;gt;|符号是强制覆盖文件的符号，它与Shell的noclobber选项有关系，如果noclobber选项开启，表		示不允许覆盖任何文件，而&amp;gt;|符号则可以不管noclobber选项的作用，强制将文件覆盖
+	eg
+	ming@ming-F83VF:~/shellpractice/chapter10$set -C  noclobber选项开启
+	ming@ming-F83VF:~/shellpractice/chapter10$date &amp;gt;newfile
+	bash: newfile: 无法覆盖已存在的文件
+
+	ming@ming-F83VF:~/shellpractice/chapter10$date &amp;gt;|newfile
+	ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
+	2012年 11月 10日 星期日 09:47:25 CST
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;标准错误输出：&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1
+重定向标准错误输出，需要使用文件标识符2
+ 	2&amp;gt; newfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+ 	eg 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ming@ming-F83VF:~/shellpractice/chapter10$ ls 22*&amp;gt;newfile 此时是将标准输出到	newfile中  但是屏幕中还是会输出，因为他是标准输出 
+ls: 无法访问22*: 没有那个文件或目录
+ming@ming-F83VF:~/shellpractice/chapter10$ls 22* 2&amp;gt;newfile 
+此时是将标准错误输出到	newfile中所以屏幕中没有任何输出
+ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
+ls: 无法访问22*: 没有那个文件或目录
+
+2
+&amp;lt; 是I/O重定向的输入符号，它可将文件内容写到标准输入之中
+ 
+ming@ming-F83VF:~/shellpractice/chapter10$ wc -l &amp;lt;newfile
+1
+这个newfile作为标准输入到wc 所以wc得到的内容只是newfile的内容！！
+所以他不会知道这是哪个文件！所以只是打印出了文件行数
+ 
+ming@ming-F83VF:~/shellpractice/chapter10$wc -l newfile
+1 newfile
+这个newfile作为wc命令的 操作文件。此时wc知道他要计数的是哪个文件，所以能打印出newfile文件名，因此既打印出了行数也打印出了文件名
+ 
+&amp;lt;&amp;lt;delimiter  这个比较重要！！！
+符号称为此处文档（Here-document），delimiter称为分界符，该符号表明：Shell将分界符delimiter之后直至下一个delimiter之前的所有内容作为输入
+ 
+ming@ming-F83VF:~/shellpractice/chapter10$cat &amp;gt;newfile &amp;lt;&amp;lt;CLOUD
+&amp;gt; hello cloud
+&amp;gt; hadoop
+&amp;gt; nosql
+&amp;gt; CLOUD
+(剖析：cat&amp;gt;newfile 是将标准输入到newfile文件中，即键盘输入newfile&amp;lt;&amp;lt;CLOUD是将输入到CLOUD之前的内容作为标准输入在此之前是用ctrl+d 结束标准输入，而使用&amp;lt;&amp;lt;  则是吧CLOUD作为结束标准输入)
+ 
+ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
+hello cloud
+hadoop
+nosql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+ 	1) 内建命令 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	父子Shell是相对的，描述了两个Shell进程的fork关系，父Shell指在控制终端或xterm窗口给出提示符的进程，子Shell是由父Shell创建的进程
+	Shell命令可分为内建命令（built-incommand）和外部命令（external command）内建命令是由Shell本身执行的命令
+	外部命令由fork出来的子Shell执行
+	内建命令不创建子Shell，外部命令创建子Shell，因此，内建命令的执行速度要比外部命令快
+
+2) 冒号: 冒号表示永真 相当于 TRUE 关键字
+	eg
+	#!/bin/bash
+	declare -i i=0
+	while : ;
+	do
+		if [ $i -eq 10 ]; then
+			break
+		fi
+		echo $((++i))
+	done
+	
+	# 冒号可以被用来清空文件 
+	# :&amp;gt;filename  
+
+3) 圆括号可以将其中的命令运行在子shell中
+	(
+		command1
+		command2
+		...
+	)
+	
+  # BASH_SUBSHELL 该变量记录了 shell 的层次·
+  eg
+	#!/bin/bash
+	echo &quot;the level of father shell is $BASH_SUBSHELL&quot;
+	outvar=outvar
+	(
+	 echo &quot;the level of sub shell is $BASH_SUBSHELL&quot;
+	 innervar=innervar
+	 echo &quot;outvar=$outvar&quot; #子shell继承了父shell的变量
+	 echo &quot;innervar=$innervar&quot;
+	)
+	echo &quot;the level of father shell is $BASH_SUBSHELL&quot;
+	if [ -z $innervar ]
+	then
+		echo &quot;the innervar is $innervar&quot;
+	else
+		echo &quot;the outvar is $outvar&quot;
+	fi
+result:
+	the level of father shell is 0
+	the level of sub shell is 1
+	outvar=outvar
+	innervar=innervar
+	the level of father shell is 0
+	the innervar is
+	
+由此可见：
+	子shell继承父shell的变量，而父shell不会得到子shell的变量
+	另外父shell也不能使用子shell定义的环境变量
+
+4) Shell 的限制模式
+   以前的Shell模式都是运行在正常模式下的，shell还有一种模式称为限制模式，简称rsh(Restricted Shell),处于限制模式下的shell运行一段代码或者片段，将会禁用一些命令或操作。
+   shell的限制模式是Linux系统基于安全方面的考虑，目地是为了限制脚本用户的权限，尽可能的减小脚本所带来的危害。
+
+
+   bash Shell的限制模式借鉴了Korn Shell的限制性命令和操作，限制的命令和操作包含如下几方面：
+   用cd命令更改当前工作目录的命令
+   更改重要环境变量的值，包括$PATH、$SHELL、$BASH_ENV、$ENV和$SHELLOPTS
+   输出重定向符号，包括&amp;gt;、&amp;gt;&amp;gt;、&amp;gt;|、&amp;gt;&amp;amp;、&amp;lt;&amp;gt;和&amp;amp;&amp;gt;符号
+   调用含有一个或多个斜杠（/）的命令名称
+   使用内建命令exec
+   使用set +r等命令关闭限制模式
+   使脚本运行在限制性模式下的两种方式：
+   第一种：set -r命令开启restricted选项
+   第二种：  #!后的语句改成/bin/bash -r
+
+5) 进程号和作业号 
+   进程号和作业号
+   Linux系统为每个进程分配一个数字以标识这个进程，这个数字就是进程号
+   创建该进程的Shell为此进程创建一个数字，也用于标识这个进程，这个数字称为作业号
+   作业号标识的是在此Shell下运行的所有进程，我们知道，Linux是多用户的系统，多用户可能开启了多个Shell，进程号就标识了整个系统下正在运行的所有进程
+   举例说明：
+   [root@jselab shell-book]# grep -r&quot;root&quot; /etc/* | sort &amp;gt; part1 &amp;amp;
+ 	   [1] 4693
+   [root@jselab shell-book]# grep -r&quot;root&quot; /usr/local/* | sort &amp;gt; part2 &amp;amp;
+   [2] 4695		  
+
+   作业有两种运行方式：前台运行和后台运行
+   前台运行的作业指作业能够控制当前终端或窗口，且能接收用户的输入
+   后台运行的作业则不在当前激活的终端或窗口中运行，是在用户“看不见”的情况下运行
+   内建命令fg可将后台运行的作业放到前台，
+   而&amp;amp;符号使得作业后台运行，
+ 
+   CTRL+Z组合键可以使作业转入阻塞态，
+   bg命令可使阻塞态作业转入后台运行
+   fg、bg和jobs命令只能以作业号为参数来指定作业，这三个命令是不能使用进程号的
+   disown命令用于从Shell的作业表中删除作业，作业表指得就是由jobs命令所列出的作业列表
+   wait命令用于等待后台作业完成，
+
+6) 信号
+
+   信号是Linux进程间通信的一个重要而复杂的概念，信号是在软件层次上对中断机制的一种模拟
+   信号是异步的，一个进程不必通过任何操作来等待信号的到达，事实上，进程也不知道信号到底什么时候到达
+   信号来源：硬件来源和软件来源
+   组合键
+   信号类型
+   意义
+       CTRL+C 	INT信号，即interrupt信号 	停止当前运行的作业
+   CTRL+Z	TSTP信号，即terminal stop信号	使当前运行的作业暂时停止（转入阻塞态）
+   CTRL+\	QUIT信号			CTRL+C的强化版本，当CTRL+C无法停止作业时，使用此组合键
+   CTRL+Y	TSTP信号，即terminal stop信号	当进程从终端读取输入数据时，暂时停止该进程
+   对于shell能执行  停止 暂停等功能，是因为向shell发送了了信号。
+   如表中信号：INT TSTP等
+ 
+   CTRL+C，INT信号，退出作业
+   CTRL+\, QUIT信号， CTRL+C的强化版本
+   CTRL+Y组合键实际上与CTRL+Z组合键是类似的，都是向进程发送TSTP信号，表示将进程暂时停止
+   kill命令可以通过进程号、作业号或进程命令名向任何作业发送信号
+   kill –l列出kill命令能发出的所有信号
+
+
+7) trap命令
+  trap是Linux的内建命令，它用于捕捉信号
+  指定收到某种信号时所执行的命令
+  trap command sig1 sig2 …sigN
+   trap命令表示当收到sig1、sig2、…、sigN中任意一个信号时，执行command命令，command命令完成后脚本继续收到信号前的操作，直到脚本执行结束
+  eg
+    [plain] view plaincopy
+    #!/bin/bash  
+    trap &quot;echo &#39;execute trap !&#39;&quot; INT  #接收 INT信号 即ctrl + c  
+    count=1  
+    while : ;  
+    do  
+    	echo &quot;this is $count&quot;  
+ 		let &quot;count+=1&quot;  
+ 		sleep 5  
+    done  
+   运行结果：每当　按下ctrl+c的时候都会被trap接收到，然后执行引号中的命令
+   anders@anders-virtual-machine:~/code/shell/subandthread$./trap1.sh
+   this is 1
+   this is 2
+   ^Cexecute trap !
+   this is 3
+   ^Cexecute trap !
+   this is 4
+   ^Cexecute trap !
+   trap命令还可以
+   忽略某些信号，即进程收到某些信号后不做任何处理，我们只要简单将trap命令的command用空字符串代替即可（&quot;&quot;或&#39;&#39;）
+	#!/bin/bash 
+	trap &quot;&quot; TERM SIGKILL INT 
+	while :; do
+		#let count=count+1
+ 			#echo &quot;This is the $count sleep&quot;
+ 			sleep 5
+	done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sat, 05 Dec 2015 00:12:34 +0800</pubDate>
+        <link>http://yourdomain.com/shell/2015/12/05/shell.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/shell/2015/12/05/shell.html</guid>
         
         
         <category>shell</category>
