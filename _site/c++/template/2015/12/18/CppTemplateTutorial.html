@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>redis学习笔记</title>
-  <meta name="description" content="今日偶尔看到一篇好文章，有幸能够学习之。15天玩转redis系列http://www.cnblogs.com/huangxincheng/p/5010795.html">
+  <title>CppTemplateTourial学习</title>
+  <meta name="description" content="偶然在知乎看到大神写的这篇cpp template的文章，觉得受益匪浅，可惜作者尚未写完，很是期待。。。 这是我看文章的过程中，顺手摘抄作者所写的代码...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+  <link rel="canonical" href="http://yourdomain.com/c++/template/2015/12/18/CppTemplateTutorial.html">
   <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,18 +57,150 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">redis学习笔记</h1>
-    <p class="post-meta"><time datetime="2015-12-02T19:24:30+08:00" itemprop="datePublished">Dec 2, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">CppTemplateTourial学习</h1>
+    <p class="post-meta"><time datetime="2015-12-18T15:38:00+08:00" itemprop="datePublished">Dec 18, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>今日偶尔看到一篇好文章，有幸能够学习之。
-15天玩转redis系列
-<a href="http://www.cnblogs.com/huangxincheng/p/5010795.html">http://www.cnblogs.com/huangxincheng/p/5010795.html</a></p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>偶然在知乎看到大神写的这篇cpp template的文章，觉得受益匪浅，可惜作者尚未写完，很是期待。。。 这是我看文章的过程中，顺手摘抄作者所写的代码...
+</code></pre>
+</div>
 
-<p><a href="http://doc.redisfans.com/key/del.html">redis参考手册</a></p>
+<p>文章链接：<a href="https://github.com/wuye9036/CppTemplateTutorial">https://github.com/wuye9036/CppTemplateTutorial</a></p>
 
-<p><a href="http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html">八天学通mongoDB</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+class TypeToID
+{
+public:
+    static int const NotID = -1;
+};
+
+template &lt;&gt;
+class TypeToID&lt;float&gt;
+{
+public:
+    static int const ID = 1;
+};
+
+template &lt;typename T&gt;
+class TypeToID&lt;T*&gt;
+{
+public:
+    typedef T SameAsT;
+    static int const ID = 0x80000000;
+};
+
+void PrintID()
+{
+    cout &lt;&lt; "ID of float*:" &lt;&lt; TypeToID&lt; TypeToID&lt;float*&gt;::SameAsT &gt;::ID &lt;&lt; endl;
+}
+
+
+template &lt;typename T&gt;
+class RemovePointer
+{
+
+};
+
+template &lt;typename T&gt;
+class RemovePointer&lt;T*&gt;
+{
+public:
+    typedef T Result;
+};
+void Foo()
+{
+    RemovePointer&lt;float*&gt;::Result x = 5.0f;
+    std::cout &lt;&lt; x &lt;&lt; std::endl;
+}
+
+template &lt;typename T&gt;
+struct X
+{
+
+};
+
+template &lt;typename T&gt;
+struct Y
+{
+    typedef X&lt;T&gt; reboundType;
+    typedef typename X&lt;T&gt;::MemberType MemberType;
+    //typedef UnknownType MemberType3;
+
+
+    void foo()
+    {
+	X&lt;T&gt; instance0;
+	typename X&lt;T&gt;::MemberType instance1;
+	//WTF instance2;
+	//大王叫我来巡山 - + &amp;
+    }
+};
+
+
+/*
+// overload
+void doWork( int );
+void doWork(float);
+void doWork(int, int);
+void f ()
+{
+    doWork(0);
+    doWork(0.5f);
+    doWork(1,1);
+}
+*/
+
+template &lt;typename T&gt; struct DoWork;  // (0) 这是原型
+template &lt;&gt; struct DoWork&lt;int&gt; {}     // (1) 这是int类型的"重载“"
+template &lt;&gt; struct DoWork&lt;float&gt; {};  // (2) 这是float类型的重载
+template &lt;&gt; struct DoWork&lt;int, int&gt; {} // (3) 这是int int类型的重载
+
+template &lt;typename T0, typename T1 = void&gt; struct X
+{
+    static void call(T0 const &amp;p0, T1 const &amp;p1)
+    {
+	std::cout &lt;&lt; " X be called " &lt;&lt; std::endl;
+    }
+}
+template &lt;typename T0&gt; struct X&lt;T0&gt;
+{
+    static void call(T0 const &amp;p0)
+    {
+	std::cout &lt;&lt; "Y be called!" &lt;&lt; std::endl;
+    }
+}
+
+
+// Boost.Tuple
+template &lt;
+    class T0 = null_type, class T1 = null_type, class T2 = null_type,
+    class T3 = null_type, class T4 = null_type, class T5 = null_type,
+    class T6 = null_type, class T7 = null_type, class T8 = null_type,
+    class T9= null_type&gt;
+class tuple;
+// Tuple的一些用例
+tuple&lt;int&gt; a;
+tuple&lt;double&amp;,const double&amp;, const double, double*, const double*&gt; b;
+tuple&lt;A, int(*)(char, int), B(A::*)(C&amp;), C&gt; c;
+tuple&lt;std::string, std::pair&lt;A, B&gt; &gt; d;
+tuple&lt;A*, tuple&lt;const A*, const B&amp;, C&gt; , bool, void *&gt; e;
+
+// C++11 变参模板(Variadic Template) 通常只能放在最后面
+template &lt;typename... Ts&gt; class tuple;
+
+int main()
+{
+    //PrintID();
+    Foo();
+    return 0;
+}
+</code></pre>
+</div>
+
 
   </div>
 

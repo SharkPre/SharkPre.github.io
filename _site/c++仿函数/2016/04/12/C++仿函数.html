@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>redis学习笔记</title>
-  <meta name="description" content="今日偶尔看到一篇好文章，有幸能够学习之。15天玩转redis系列http://www.cnblogs.com/huangxincheng/p/5010795.html">
+  <title>C++仿函数</title>
+  <meta name="description" content="  仿函数简单来说,就是重定义了成员函数operator()的一种自定义类型对象">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+  <link rel="canonical" href="http://yourdomain.com/c++%E4%BB%BF%E5%87%BD%E6%95%B0/2016/04/12/C++%E4%BB%BF%E5%87%BD%E6%95%B0.html">
   <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,18 +57,32 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">redis学习笔记</h1>
-    <p class="post-meta"><time datetime="2015-12-02T19:24:30+08:00" itemprop="datePublished">Dec 2, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">C++仿函数</h1>
+    <p class="post-meta"><time datetime="2016-04-12T12:30:00+08:00" itemprop="datePublished">Apr 12, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>今日偶尔看到一篇好文章，有幸能够学习之。
-15天玩转redis系列
-<a href="http://www.cnblogs.com/huangxincheng/p/5010795.html">http://www.cnblogs.com/huangxincheng/p/5010795.html</a></p>
+    <blockquote>
+  <p>仿函数简单来说,就是重定义了成员函数operator()的一种自定义类型对象</p>
+</blockquote>
 
-<p><a href="http://doc.redisfans.com/key/del.html">redis参考手册</a></p>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++">	<span class="cp">#include &lt;iostream&gt;
+</span>	<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+	
+	<span class="k">class</span> <span class="nc">_functor</span>
+	<span class="p">{</span>
+	<span class="k">public</span><span class="o">:</span>
+		<span class="kt">int</span> <span class="k">operator</span><span class="p">()(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span> <span class="p">}</span>
+	<span class="p">};</span>
+	
+	<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">_functor</span> <span class="n">functor</span><span class="p">;</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">functor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span></code></pre></figure>
 
-<p><a href="http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html">八天学通mongoDB</a></p>
 
   </div>
 

@@ -9,7 +9,7 @@
 title: Coding Hard
 email: 1160931867@qq.com
 description: > # this means to ignore newlines until "baseurl:"
-  Talk is cheap, show me the code.
+  Talk is cheap, show me the code
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
@@ -18,4 +18,4 @@ github_username:  SharkPre
 paginate: 10
 
 # Build settings
-markdown: kramdownu
+markdown: kramdown

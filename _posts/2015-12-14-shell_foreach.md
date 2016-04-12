@@ -1,10 +1,10 @@
 ---
-layout:post
+layout: post
 title: "shell 循环"
-date: 2015-12-14 00:00:00 +0800
+date: 2015-12-12 12:30:00 +0800
 categories: shell
 ---
- 
+
     
     
     
@@ -45,4 +45,4 @@ categories: shell
         shift
     done
 #result: 
-<img src="/assets/2.png" alt="1.png" class="img-center" width="1544" height="1244"/>
+	<img src="/assets/2.png" alt="1.png" class="img-center" width="1544" height="1244"/>

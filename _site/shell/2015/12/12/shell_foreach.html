@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>redis学习笔记</title>
-  <meta name="description" content="今日偶尔看到一篇好文章，有幸能够学习之。15天玩转redis系列http://www.cnblogs.com/huangxincheng/p/5010795.html">
+  <title>shell 循环</title>
+  <meta name="description" content="#!/bin/bashfor var in 12 3 4 do    echo $vardone">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+  <link rel="canonical" href="http://yourdomain.com/shell/2015/12/12/shell_foreach.html">
   <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,18 +57,50 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">redis学习笔记</h1>
-    <p class="post-meta"><time datetime="2015-12-02T19:24:30+08:00" itemprop="datePublished">Dec 2, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">shell 循环</h1>
+    <p class="post-meta"><time datetime="2015-12-12T12:30:00+08:00" itemprop="datePublished">Dec 12, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>今日偶尔看到一篇好文章，有幸能够学习之。
-15天玩转redis系列
-<a href="http://www.cnblogs.com/huangxincheng/p/5010795.html">http://www.cnblogs.com/huangxincheng/p/5010795.html</a></p>
+    <div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="k">for </span>var <span class="k">in </span>12 3 4 
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$var</span>
+<span class="k">done
 
-<p><a href="http://doc.redisfans.com/key/del.html">redis参考手册</a></p>
+for </span>file <span class="k">in</span> <span class="k">$(</span>ls ..<span class="k">)</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"file: </span><span class="nv">$file</span><span class="s2">"</span>
+<span class="k">done
 
-<p><a href="http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html">八天学通mongoDB</a></p>
+</span><span class="nb">echo</span> <span class="s2">"the number of the arguments is $#"</span>
+<span class="k">for </span>argument
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$argument</span>
+<span class="k">done
+
+for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span>1;i&lt;<span class="o">=</span>10; i++ <span class="o">))</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2"> time"</span>
+<span class="k">done
+
+</span><span class="nv">i</span><span class="o">=</span>0
+<span class="nv">sum</span><span class="o">=</span>0
+<span class="k">while</span> <span class="o">((</span> i &lt; 10 <span class="o">))</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"i:</span><span class="nv">$i</span><span class="s2">, sum:</span><span class="nv">$sum</span><span class="s2">"</span>
+    <span class="nb">let</span> <span class="s2">"sum+=</span><span class="nv">$i</span><span class="s2">"</span>
+    <span class="nb">let</span> <span class="s2">"i++"</span>
+<span class="k">done
+
+while</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$*</span><span class="s2">"</span> !<span class="o">=</span> <span class="s2">""</span> <span class="o">]</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+    <span class="nb">shift
+</span><span class="k">done</span> <span class="c">#result: </span>
+&lt;img <span class="nv">src</span><span class="o">=</span><span class="s2">"/assets/2.png"</span> <span class="nv">alt</span><span class="o">=</span><span class="s2">"1.png"</span> <span class="nv">class</span><span class="o">=</span><span class="s2">"img-center"</span> <span class="nv">width</span><span class="o">=</span><span class="s2">"1544"</span> <span class="nv">height</span><span class="o">=</span><span class="s2">"1244"</span>/&gt;
+</code></pre>
+</div>
 
   </div>
 

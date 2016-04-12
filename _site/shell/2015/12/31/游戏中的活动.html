@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>redis学习笔记</title>
-  <meta name="description" content="今日偶尔看到一篇好文章，有幸能够学习之。15天玩转redis系列http://www.cnblogs.com/huangxincheng/p/5010795.html">
+  <title>游戏中的活动</title>
+  <meta name="description" content="游戏中活动的一般做法">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+  <link rel="canonical" href="http://yourdomain.com/shell/2015/12/31/%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E6%B4%BB%E5%8A%A8.html">
   <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,18 +57,28 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">redis学习笔记</h1>
-    <p class="post-meta"><time datetime="2015-12-02T19:24:30+08:00" itemprop="datePublished">Dec 2, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">游戏中的活动</h1>
+    <p class="post-meta"><time datetime="2015-12-31T15:00:00+08:00" itemprop="datePublished">Dec 31, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>今日偶尔看到一篇好文章，有幸能够学习之。
-15天玩转redis系列
-<a href="http://www.cnblogs.com/huangxincheng/p/5010795.html">http://www.cnblogs.com/huangxincheng/p/5010795.html</a></p>
+    <h2 id="section">游戏中活动的一般做法</h2>
 
-<p><a href="http://doc.redisfans.com/key/del.html">redis参考手册</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>一般游戏中的活动有很多功能和属性是每一个活动都需要的
+所以可以把这个功能和属性做成一个基类，然后所有的活动都继承这个基类的方法和属性。
 
-<p><a href="http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html">八天学通mongoDB</a></p>
+所以我们先需要定义一个包含共有属性的结构体
+
+然后在顶一个包含共有函数的类，并声明一个上述结构体的变量 
+这个结构体变量的初始化在每一个继承该base类的之类加载配置的时候，初始化 (即调用该函数的时候 virtual int LoadPhpInfo(Json::Value &amp; jsonStr) = 0;)	
+
+活动类在继承该基类的时候，需要事先声明一下，然后在继承这个类
+
+然后我们需要一个活动管理类来管理游戏中多有这种类型的活动 
+我们需要把所有的活动类都插入到该child中来管理 
+</code></pre>
+</div>
+
 
   </div>
 

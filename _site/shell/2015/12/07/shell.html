@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>redis学习笔记</title>
-  <meta name="description" content="今日偶尔看到一篇好文章，有幸能够学习之。15天玩转redis系列http://www.cnblogs.com/huangxincheng/p/5010795.html">
+  <title>一些shell脚本</title>
+  <meta name="description" content="Talk is cheap, show me the code!">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+  <link rel="canonical" href="http://yourdomain.com/shell/2015/12/07/shell.html">
   <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
 </head>
 
@@ -57,18 +57,118 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">redis学习笔记</h1>
-    <p class="post-meta"><time datetime="2015-12-02T19:24:30+08:00" itemprop="datePublished">Dec 2, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">一些shell脚本</h1>
+    <p class="post-meta"><time datetime="2015-12-07T15:00:00+08:00" itemprop="datePublished">Dec 7, 2015</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>今日偶尔看到一篇好文章，有幸能够学习之。
-15天玩转redis系列
-<a href="http://www.cnblogs.com/huangxincheng/p/5010795.html">http://www.cnblogs.com/huangxincheng/p/5010795.html</a></p>
+    <h1 id="talk-is-cheap-show-me-the-code">Talk is cheap, show me the code!</h1>
 
-<p><a href="http://doc.redisfans.com/key/del.html">redis参考手册</a></p>
+<h2 id="dont-tested">don’t tested.</h2>
 
-<p><a href="http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html">八天学通mongoDB</a></p>
+<p>** 1 **</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nv">a</span><span class="o">=</span>2009
+<span class="nb">let</span> <span class="s2">"a+=1"</span>
+<span class="nb">echo</span> <span class="s2">"a=</span><span class="nv">$a</span><span class="s2">"</span>
+b <span class="o">=</span> xx09
+<span class="nb">echo</span> <span class="s2">"b=</span><span class="nv">$b</span><span class="s2">"</span>
+<span class="nb">declare</span> -i b     <span class="c">##declare b as a integer</span>
+<span class="nb">echo</span> <span class="s2">"b=</span><span class="nv">$b</span><span class="s2">"</span>
+<span class="nb">let</span> <span class="s2">"b+=1"</span>       <span class="c">## b equal 1, when b is declared a integer it becomes 0.</span>
+<span class="nb">echo</span> <span class="s2">"b=</span><span class="nv">$b</span><span class="s2">"</span>
+<span class="nb">exit </span>0
+
+
+result:
+<span class="nv">a</span><span class="o">=</span>2010
+<span class="nv">b</span><span class="o">=</span>xx09
+<span class="nv">b</span><span class="o">=</span>xx09
+<span class="nv">b</span><span class="o">=</span>1
+</code></pre>
+</div>
+
+<p>** 2 **</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>shell 有两种类型，字符，整型数字
+字符默认是 空 “”
+数字默认是 0
+
+#!/bin/bash
+c=""
+echo "c=$c"
+let "c+=1"
+echo "c=$c"
+echo "e=$e"
+let "e+=1"
+echo "e=$e"
+ecit
+
+result:
+c=
+c=1
+e=
+e=1 
+</code></pre>
+</div>
+
+<p>** 3 **</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>shell变量一般是无类型的，但是bash shell提供了declare和typeset两个命令来制定变量的类型，这两个命令完全等价。
+declare [选项] 变量
+-r 声明为只读变量
+-i 声明为整形变量
+-a 将变量声明为数组
+-f 显示此脚本前定义的所有函数名及其内容
+-F 仅显示此脚本前定义过的所有函数名
+-x 将变量声明为环境变量
+
+eg
+#!/bin/bash
+var1=2012
+var2=$var1+1	#no declared£¬ so it's string.
+echo "var2=$var2"
+
+let "var3=$var1+1"	# let functioned.
+echo "var3=$var3"
+
+declare -i var4 #declare as a integer
+var4=$var1+1
+echo "var4=$var4"
+
+
+output:
+var2=2012+1
+var3=2013
+var4=2013
+
+
+#!/bin/bash
+## let equal to (())
+
+var1=9
+var2=10
+
+var3=$((var1*var2)) # equal as (($var1*$var2))
+echo $var3
+</code></pre>
+</div>
+
+<p>** 4 **</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>环境变量
+ENVIRON-VARIABLE=value  #环境变量赋值
+export ENVIRON-VARIABLE #声明环境变量
+消除环境变量是unset
+
+env可以列出已经定义的环境变量
+
+pwd是当前的目录路径 
+OLDPWD是旧的工作目录
+</code></pre>
+</div>
+
 
   </div>
 
