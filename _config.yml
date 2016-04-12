@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 我不是坏人
+title: Coding Hard
 email: 1160931867@qq.com
 description: > # this means to ignore newlines until "baseurl:"
-  读书笔记，加强自己的理解，也希望能和大家一起交流学习。
+  Talk is cheap, show me the code.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
@@ -18,4 +18,4 @@ github_username:  SharkPre
 paginate: 10
 
 # Build settings
-markdown: kramdown
+markdown: kramdownu
