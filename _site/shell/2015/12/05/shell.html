@@ -10,8 +10,8 @@
   <meta name="description" content="[转载自：]http://blog.csdn.net/anders_zhuo/article/details/8644207">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/shell/2015/12/05/shell.html">
-  <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/shell/2015/12/05/shell.html">
+  <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -44,6 +44,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       </div>
     </nav>
 
@@ -64,11 +72,11 @@
   <div class="post-content" itemprop="articleBody">
     <p>[转载自：]<a href="http://blog.csdn.net/anders_zhuo/article/details/8644207">http://blog.csdn.net/anders_zhuo/article/details/8644207</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-<span class="nb">echo</span> -n <span class="s2">"Enter your name:"</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Enter your name:"</span>
 <span class="nb">read
 echo</span> <span class="s2">"read without anyvariables:REPLY=</span><span class="nv">$REPLY</span><span class="s2">"</span>
-<span class="nb">echo</span> -n <span class="s2">"Enter your age:"</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Enter your age:"</span>
 <span class="nb">read </span>age
 <span class="nb">echo</span> <span class="s2">"read with variable:Age=</span><span class="nv">$age</span><span class="s2"> and REPLY=</span><span class="nv">$REPLY</span><span class="s2">"</span>
 
@@ -82,11 +90,11 @@ echo</span> <span class="s2">"read without anyvariables:REPLY=</span><span class
 
 </span><span class="nv">count</span><span class="o">=</span>1
 <span class="nv">MAX</span><span class="o">=</span>5	
-<span class="k">while</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$SECONDS</span><span class="s2">"</span> -le <span class="s2">"</span><span class="nv">$MAX</span><span class="s2">"</span> <span class="o">]</span>
+<span class="k">while</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$SECONDS</span><span class="s2">"</span> <span class="nt">-le</span> <span class="s2">"</span><span class="nv">$MAX</span><span class="s2">"</span> <span class="o">]</span>
 <span class="k">do
 	</span><span class="nb">echo</span> <span class="s2">"this is the </span><span class="nv">$count</span><span class="s2"> time to sleep!"</span>
 	<span class="nb">let </span><span class="nv">count</span><span class="o">=</span><span class="nv">$count</span>+1
-	sleep 2
+	<span class="nb">sleep </span>2
 <span class="k">done
 </span><span class="nb">echo</span> <span class="s2">"this script runs </span><span class="nv">$SECONDS</span><span class="s2"> seconds!"</span>
 
@@ -102,7 +110,7 @@ echo</span> <span class="s2">"read without anyvariables:REPLY=</span><span class
 
 <span class="c">#{string: -position} #冒号和横杆之间有空格 从右边开始取</span>
 <span class="c">#{string:(position)} </span>
-expr substr <span class="nv">$string</span> <span class="nv">$position</span> <span class="nv">$length</span> <span class="c">#从名称为$string的字符串的第#position位置开始		取长度为$length的子串</span>
+<span class="nb">expr </span>substr <span class="nv">$string</span> <span class="nv">$position</span> <span class="nv">$length</span> <span class="c">#从名称为$string的字符串的第#position位置开始		取长度为$length的子串</span>
 
 delete sunstring
 <span class="k">${</span><span class="nv">string</span><span class="p">#substring</span><span class="k">}</span> <span class="c">#删除string开头处与substring匹配的最短子串</span>
@@ -135,12 +143,11 @@ ming@ming-F83VF:~/shellpractice/chapter9<span class="nv">$echo</span> <span clas
  	<span class="k">${</span><span class="nv">string</span><span class="p">//substring/replacement</span><span class="k">}</span>   <span class="c">#替换所有与substring相匹配的子串  </span>
 <span class="k">${</span><span class="nv">string</span><span class="p">/#substring/replacement</span><span class="k">}</span>   <span class="c">#替换string开头处与substring相匹配的子串  </span>
  	<span class="k">${</span><span class="nv">string</span><span class="p">/%substring/replacement</span><span class="k">}</span>   <span class="c">#替换string结尾处与substring相匹配的子串  </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="io">IO重定向</h2>
+<h2 id="io重定向">IO重定向</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	I/O重定向是一个过程，这个过程捕捉一个文件、或命令、或程序、或脚本、甚至代码块（code block）的输出，然后把捕捉到的输出，作为输入发送给另外一个文件、或命令、或程序、或脚本
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	I/O重定向是一个过程，这个过程捕捉一个文件、或命令、或程序、或脚本、甚至代码块（code block）的输出，然后把捕捉到的输出，作为输入发送给另外一个文件、或命令、或程序、或脚本
 	
 	文件标识符是从0开始到9结束的整数，指明了与进程相关的特定数据流的源
 	
@@ -170,18 +177,16 @@ ming@ming-F83VF:~/shellpractice/chapter9<span class="nv">$echo</span> <span clas
 	ming@ming-F83VF:~/shellpractice/chapter10$date &gt;|newfile
 	ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
 	2012年 11月 10日 星期日 09:47:25 CST
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="section">标准错误输出：</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>1
+<h3 id="标准错误输出">标准错误输出：</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
 重定向标准错误输出，需要使用文件标识符2
  	2&gt; newfile
-</code></pre>
-</div>
+</code></pre></div></div>
 
  	eg 
-<div class="highlighter-rouge"><pre class="highlight"><code>ming@ming-F83VF:~/shellpractice/chapter10$ ls 22*&gt;newfile 此时是将标准输出到	newfile中  但是屏幕中还是会输出，因为他是标准输出 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ming@ming-F83VF:~/shellpractice/chapter10$ ls 22*&gt;newfile 此时是将标准输出到	newfile中  但是屏幕中还是会输出，因为他是标准输出 
 ls: 无法访问22*: 没有那个文件或目录
 ming@ming-F83VF:~/shellpractice/chapter10$ls 22* 2&gt;newfile 
 此时是将标准错误输出到	newfile中所以屏幕中没有任何输出
@@ -214,11 +219,10 @@ ming@ming-F83VF:~/shellpractice/chapter10$cat newfile
 hello cloud
 hadoop
 nosql
-</code></pre>
-</div>
+</code></pre></div></div>
 
  	1) 内建命令 
-<div class="highlighter-rouge"><pre class="highlight"><code>	父子Shell是相对的，描述了两个Shell进程的fork关系，父Shell指在控制终端或xterm窗口给出提示符的进程，子Shell是由父Shell创建的进程
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	父子Shell是相对的，描述了两个Shell进程的fork关系，父Shell指在控制终端或xterm窗口给出提示符的进程，子Shell是由父Shell创建的进程
 	Shell命令可分为内建命令（built-incommand）和外部命令（external command）内建命令是由Shell本身执行的命令
 	外部命令由fork出来的子Shell执行
 	内建命令不创建子Shell，外部命令创建子Shell，因此，内建命令的执行速度要比外部命令快
@@ -370,8 +374,7 @@ result:
  			#echo "This is the $count sleep"
  			sleep 5
 	done
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
   </div>

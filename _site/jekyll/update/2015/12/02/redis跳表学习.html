@@ -10,8 +10,8 @@
   <meta name="description" content="  跳跃表(SkipList)是1987年才搞出来的新型高效数据结构，它的牛逼之处在于跳出来了树模型的思维，用多层链表的模式构造了Log(N)的时间复杂度，层的高度增加与否，采用随机数的模式。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/12/02/redis%E8%B7%B3%E8%A1%A8%E5%AD%A6%E4%B9%A0.html">
-  <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/jekyll/update/2015/12/02/redis%E8%B7%B3%E8%A1%A8%E5%AD%A6%E4%B9%A0.html">
+  <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -44,6 +44,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       </div>
     </nav>
 
@@ -67,9 +75,9 @@
 </blockquote>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++">	
-	<span class="c1">// ZSET use a specialized version of Skiplists
-</span>	<span class="c1">// 以下是redis源码中跳表的定义
-</span>	<span class="k">typedef</span> <span class="k">struct</span> <span class="n">zskiplistNode</span> <span class="p">{</span>
+	<span class="c1">// ZSET use a specialized version of Skiplists</span>
+	<span class="c1">// 以下是redis源码中跳表的定义</span>
+	<span class="k">typedef</span> <span class="k">struct</span> <span class="n">zskiplistNode</span> <span class="p">{</span>
     	<span class="n">robj</span> <span class="o">*</span><span class="n">obj</span><span class="p">;</span>
     	<span class="kt">double</span> <span class="n">score</span><span class="p">;</span>
     	<span class="k">struct</span> <span class="n">zskiplistNode</span> <span class="o">*</span><span class="n">backward</span><span class="p">;</span>

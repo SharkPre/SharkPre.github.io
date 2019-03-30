@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>redis学习笔记</title>
-  <meta name="description" content="今日偶尔看到一篇好文章，有幸能够学习之。15天玩转redis系列http://www.cnblogs.com/huangxincheng/p/5010795.html">
+  <title>Atom</title>
+  <meta name="description" content="  在Linux系统中，以 文件 方式访问设备，每个用 i节点 来标识。  启动Linux Shell的时候，stdin stdout stderr 三个文件描述符会自动打开，它们的值分别是 0 1 2  创建新进程的系统调用是 fork 创建新线程的函数是 pthread_create  TCP协议里面的五层分...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/12/02/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
-  <link rel="alternate" type="application/rss+xml" title="我不是坏人" href="http://yourdomain.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/linux/%E9%9D%A2%E8%AF%95%E9%A2%98/2016/04/14/Linux%E9%9D%A2%E8%AF%95%E9%A2%98.html">
+  <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">我不是坏人</a>
+    <a class="site-title" href="/">Coding Hard</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -44,6 +44,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       </div>
     </nav>
 
@@ -57,18 +65,41 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">redis学习笔记</h1>
-    <p class="post-meta"><time datetime="2015-12-02T19:24:30+08:00" itemprop="datePublished">Dec 2, 2015</time></p>
+    <h1 class="post-title" itemprop="name headline">Atom</h1>
+    <p class="post-meta"><time datetime="2016-04-14T13:51:00+08:00" itemprop="datePublished">Apr 14, 2016</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>今日偶尔看到一篇好文章，有幸能够学习之。
-15天玩转redis系列
-<a href="http://www.cnblogs.com/huangxincheng/p/5010795.html">http://www.cnblogs.com/huangxincheng/p/5010795.html</a></p>
-
-<p><a href="http://doc.redisfans.com/key/del.html">redis参考手册</a></p>
-
-<p><a href="http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html">八天学通mongoDB</a></p>
+    <ol>
+  <li>在Linux系统中，以 文件 方式访问设备，每个用 i节点 来标识。</li>
+  <li>启动Linux Shell的时候，stdin stdout stderr 三个文件描述符会自动打开，
+它们的值分别是 0 1 2</li>
+  <li>创建新进程的系统调用是 fork 创建新线程的函数是 pthread_create</li>
+  <li>TCP协议里面的五层分别是  物理层 数据链路层 网络层 传输层 应用层
+ 假设两台机器AB，以A给B发信息，作为例子解释
+ 1&gt; 物理层
+   目标：实现AB之间可以发送01信号
+   意义：就是物理上实现连接，AB之间用网线连接；或者无线链接
+ 2&gt; 数据链路层
+   目标：把信息编码成01，并找到B后发给它
+   编码：将信息封装成一个数据包，包括头和数据两部分；头里面包含了A和B的物理地址，世上任何两台机器有唯一的物理地址
+   发送：A以广播的形式，发给所有A可以发送到的机器，如果自己是B则拿过来，如果不是则丢弃
+ 3&gt; 网络层
+   目标：改善数据包发送的范围，减少网络负担
+   问题：由于A会发送给所有机器，则如果连接的机器越多负担越重
+   方案：将世界的机器分区域，一个区域内的网络通过广播发送，区域之间则通过新协议（IP）交流
+   协议：物理地址是网卡本身的地址，IP4，IP6则是人为分配的地址，可以通过子网掩码来判断AB是否属于同一个区域
+ 4&gt; 传输层
+   目标：区分AB上不同应用程序对网络的使用
+   方案：通过端口（0-65535），0-1023已经被系统使用了；端口好像进入一个大厦后，要进入房间的门牌号，端口的选择则通过新协议（TCP/UDP）实现
+   协议：TCP、UDP分别是两种可靠性级别不同的协议
+ 5&gt; 应用层
+   目标：实现对AB不同应用程序的数据编码
+   原因：不同应用程序根据自己的需求，对数据进行A上编码和B上解码</li>
+  <li>进程具有的基本状态为 运行 就绪 阻塞</li>
+  <li>网络IO模型有哪五种 同步IO 异步IO 阻塞IO 非阻塞IO 同步复用IO</li>
+  <li>线程信号量的类型为</li>
+</ol>
 
   </div>
 
@@ -81,12 +112,12 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">我不是坏人</h2>
+    <h2 class="footer-heading">Coding Hard</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>我不是坏人</li>
+          <li>Coding Hard</li>
           <li><a href="mailto:1160931867@qq.com">1160931867@qq.com</a></li>
         </ul>
       </div>
@@ -112,7 +143,7 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>读书笔记，加强自己的理解，也希望能和大家一起交流学习。
+        <p>Talk is cheap, show me the code
 </p>
       </div>
     </div>

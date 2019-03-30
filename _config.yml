@@ -20,4 +20,6 @@ paginate: 10
 # Build settings
 markdown: kramdown
 
+plugins: [jekyll-paginate]
+paginate: 5
 theme: jekyll-theme-minimal

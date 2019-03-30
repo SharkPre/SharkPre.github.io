@@ -10,8 +10,8 @@
   <meta name="description" content="Talk is cheap, show me the code!">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/shell/2015/12/07/shell.html">
-  <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://yourdomain.com/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/shell/2015/12/07/shell.html">
+  <link rel="alternate" type="application/rss+xml" title="Coding Hard" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -44,6 +44,14 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       </div>
     </nav>
 
@@ -68,13 +76,13 @@
 
 <p>** 1 **</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
 <span class="nv">a</span><span class="o">=</span>2009
 <span class="nb">let</span> <span class="s2">"a+=1"</span>
 <span class="nb">echo</span> <span class="s2">"a=</span><span class="nv">$a</span><span class="s2">"</span>
 b <span class="o">=</span> xx09
 <span class="nb">echo</span> <span class="s2">"b=</span><span class="nv">$b</span><span class="s2">"</span>
-<span class="nb">declare</span> -i b     <span class="c">##declare b as a integer</span>
+<span class="nb">declare</span> <span class="nt">-i</span> b     <span class="c">##declare b as a integer</span>
 <span class="nb">echo</span> <span class="s2">"b=</span><span class="nv">$b</span><span class="s2">"</span>
 <span class="nb">let</span> <span class="s2">"b+=1"</span>       <span class="c">## b equal 1, when b is declared a integer it becomes 0.</span>
 <span class="nb">echo</span> <span class="s2">"b=</span><span class="nv">$b</span><span class="s2">"</span>
@@ -86,12 +94,11 @@ result:
 <span class="nv">b</span><span class="o">=</span>xx09
 <span class="nv">b</span><span class="o">=</span>xx09
 <span class="nv">b</span><span class="o">=</span>1
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>** 2 **</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>shell 有两种类型，字符，整型数字
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shell 有两种类型，字符，整型数字
 字符默认是 空 “”
 数字默认是 0
 
@@ -110,12 +117,11 @@ c=
 c=1
 e=
 e=1 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>** 3 **</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>shell变量一般是无类型的，但是bash shell提供了declare和typeset两个命令来制定变量的类型，这两个命令完全等价。
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shell变量一般是无类型的，但是bash shell提供了declare和typeset两个命令来制定变量的类型，这两个命令完全等价。
 declare [选项] 变量
 -r 声明为只读变量
 -i 声明为整形变量
@@ -152,12 +158,11 @@ var2=10
 
 var3=$((var1*var2)) # equal as (($var1*$var2))
 echo $var3
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>** 4 **</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>环境变量
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>环境变量
 ENVIRON-VARIABLE=value  #环境变量赋值
 export ENVIRON-VARIABLE #声明环境变量
 消除环境变量是unset
@@ -166,8 +171,7 @@ env可以列出已经定义的环境变量
 
 pwd是当前的目录路径 
 OLDPWD是旧的工作目录
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
   </div>
